@@ -104,4 +104,3 @@ function getArmorsByField($field, $value)
 	// $json = json_encode($res);
 	sendJSON($res);
 }
-
