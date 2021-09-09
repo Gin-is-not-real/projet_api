@@ -4,7 +4,6 @@ require_once("./api.php");
 
 //index.php?demande=monsters
 //index.php?demande=monsters&field=name_en&value=Aptonoth
-
 // getMonstersByField('name_en', 'Aptonoth');
 
 try {

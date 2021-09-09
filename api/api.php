@@ -2,7 +2,7 @@
 require_once ("get_db.php");
 
 define("URL", str_replace("index.php","",(isset($_SERVER['HTTPS'])? "https" : "http").
-"://".$_SERVER['HTTP_HOST'].$_SERVER["PHP_SELF"]));
+"://".$_SERVER['HTTP_HOST'].$_SERVER["PHP_SELF"])); 
 
 function sendJSON($infos){
     header("Access-Control-Allow-Origin: *");
