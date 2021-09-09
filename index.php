@@ -1,5 +1,11 @@
 <?php
 require_once("./api.php");
+//http://localhost/FOLDERS/FORM_PROJETS/form_projet_api/projet_api/index.php?demande=monsters
+
+//index.php?demande=monsters
+
+
+getMonstersByField('name_en', 'Aptonoth');
 
 try {
     if(!empty($_GET['demande'])) {
@@ -12,6 +18,7 @@ try {
                 }
                 else {
                     //getMonstersBy..($url[1]);
+
                 }
             break;
             
@@ -21,6 +28,15 @@ try {
                 }
                 else {
                     //getWeaponsBy..()
+                }
+            break;
+
+            case "armors":
+                if(!empty($url[1])) {
+                    //getArmors()
+                }
+                else {
+                    //getArmorsBy..()
                 }
         }
         die(var_dump($url[0]));
