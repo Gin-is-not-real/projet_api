@@ -14,7 +14,7 @@
                     <a href="">monstres</a>
                 </li>
                 <li>
-                    <a href="">armes</a>
+                    <a href="weapons/index.php">armes</a>
                 </li>
                 <li>
                     <a href="">armures</a>
