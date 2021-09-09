@@ -31,8 +31,8 @@ function getMonstersByField($field, $value)
 		echo $res[$i]['name_en'];
 		echo "</br>";
 	}
-	$json = json_encode($res);
 	$query->closeCursor();
+	$json = json_encode($res);
 }
 
 function getWeapons()
@@ -56,13 +56,13 @@ function getWeaponsByField($field, $value)
 	for ($i=0; $i < count($res); $i++)
 	{
 		if (empty($res[$i]['previous_en']))
-			echo $res[$i]['name_en'] . " uprgade of nothing";
+			echo $res[$i]['name_en'] . " upgrade of nothing";
 		else
-			echo $res[$i]['name_en'] . " uprgade of " . $res[$i]['previous_en'];
+			echo $res[$i]['name_en'] . " upgrade of " . $res[$i]['previous_en'];
 		echo "</br>";
 	}
-	$json = json_encode($res);
 	$query->closeCursor();
+	$json = json_encode($res);
 }
 
 function getArmors()
@@ -88,14 +88,11 @@ function getArmorsByField($field, $value)
 		echo $res[$i]['name_en'] . " (" . $res[$i]['type'] . ")";
 		echo "</br>";
 	}
-	$json = json_encode($res);
 	$query->closeCursor();
+	$json = json_encode($res);
 }
 
-if (isset($_GET['field']))
-{
-	if ($_GET['field'])
-	{
+
 		// $pdo = new PDO("mysql:host=localhost;dbname=prj_api;charset=utf8","root","");
 		// $res = $pdo->query("SELECT * FROM armors");
 		// $res = $res->fetchAll();
@@ -110,6 +107,4 @@ if (isset($_GET['field']))
 		// }
 		// $json = json_encode($res);
 		// getMonsters();
-		getMonstersByField($_GET['field'], $_GET['value']);
-	}
-}
+		getWeaponsByField($_GET['field'], $_GET['value']);
