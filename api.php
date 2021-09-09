@@ -1,7 +1,13 @@
 <?php
 require_once ("get_db.php");
-// define("URL", str_replace("index.php","",(isset($_SERVER['HTTPS'])? "https" : "http").
-// "://".$_SERVER['HTTP_HOST'].$_SERVER["PHP_SELF"]));
+define("URL", str_replace("index.php","",(isset($_SERVER['HTTPS'])? "https" : "http").
+"://".$_SERVER['HTTP_HOST'].$_SERVER["PHP_SELF"]));
+
+function sendJSON($res){
+    header("Access-Control-Allow-Origin: *");
+    header("Content-Type: application/json");
+    echo json_encode($res,JSON_UNESCAPED_UNICODE);
+}
 
 function getMonsters()
 {
@@ -15,7 +21,7 @@ function getMonsters()
 		echo "</br>";
 	}
 	$query->closeCursor();
-	$json = json_encode($res);
+	// sendJSON($res);
 }
 
 function getMonstersByField($field, $value)
@@ -32,7 +38,7 @@ function getMonstersByField($field, $value)
 		echo "</br>";
 	}
 	$query->closeCursor();
-	$json = json_encode($res);
+	sendJSON($res);
 }
 
 function getWeapons()
@@ -42,7 +48,7 @@ function getWeapons()
 	$query->execute();
 	$res = $query->fetchAll();
 	$query->closeCursor();
-	$json = json_encode($res);
+	sendJSON($res);
 }
 
 function getWeaponsByField($field, $value)
@@ -62,17 +68,17 @@ function getWeaponsByField($field, $value)
 		echo "</br>";
 	}
 	$query->closeCursor();
-	$json = json_encode($res);
+	sendJSON($res);
 }
 
 function getArmors()
 {
 	$pdo = get_db();
-	$res = $pdo->prepare("SELECT * FROM armors");
+	$query = $pdo->prepare("SELECT * FROM armors");
 	$query->execute();
 	$res = $query->fetchAll();
 	$query->closeCursor();
-	$json = json_encode($res);
+	sendJSON($res);
 }
 
 function getArmorsByField($field, $value)
@@ -89,7 +95,7 @@ function getArmorsByField($field, $value)
 		echo "</br>";
 	}
 	$query->closeCursor();
-	$json = json_encode($res);
+	sendJSON($res);
 }
 
 
@@ -106,5 +112,6 @@ function getArmorsByField($field, $value)
 		// 	echo "</br>";
 		// }
 		// $json = json_encode($res);
-		// getMonsters();
-		getWeaponsByField($_GET['field'], $_GET['value']);
+		if (isset($_GET['get']))
+		getMonsters();
+		// getWeaponsByField($_GET['field'], $_GET['value']);
