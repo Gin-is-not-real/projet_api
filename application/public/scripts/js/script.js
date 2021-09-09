@@ -28,7 +28,7 @@ console.log(selectFields);
 
 selectFields.addEventListener('change', function() {
     if(adaptativInputContainer.childNodes[3] != undefined) {
-        console.log('il y a un childnode');
+        // console.log('il y a un childnode');
         adaptativInputContainer.childNodes[3].remove();
     }
 
@@ -41,15 +41,18 @@ selectFields.addEventListener('change', function() {
     }
 
     adaptativInputContainer.appendChild(input);
-})
+});
+
+
 function createInput() {
     let input = document.createElement('input');
     input.type = "text";
     input.name = "inp-search";
+    input.required = true;
     return input;
 }
 
-//genere un select et ses option
+//genere un select et ses options
 function createSelect(array) {
     let select = document.createElement('select');
     select.name = "inp-search";

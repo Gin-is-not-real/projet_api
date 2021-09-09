@@ -29,7 +29,7 @@ function getMonsters()
 function getMonstersByField($field, $value)
 {
 	$pdo = get_db();
-	$query = $pdo->prepare("SELECT * FROM monsters WHERE " . $field . "='" . $value ."'");
+	$query = $pdo->prepare("SELECT * FROM monsters WHERE " . $field . " LIKE '" . $value ."'");
 	$query->execute();
 	$res = $query->fetchAll();
 	// if (empty($res))

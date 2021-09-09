@@ -1,11 +1,19 @@
 <?php
-$monsters = json_decode(file_get_contents("http://localhost/FOLDERS/FORM_PROJETS/form_projet_api/projet_api/api/monsters"));
+
 ob_start();
+$route = "http://localhost/FOLDERS/FORM_PROJETS/form_projet_api/projet_api/api/monsters";
+
+if(isset($_POST["select-field"]) AND isset($_POST['inp-search'])) {
+    $route .= '/' . $_POST['select-field'] . '/' . $_POST['inp-search'];
+}
+
+$monsters = json_decode(file_get_contents($route));
+
 ?>
 
 <article>
     <div>
-        <form action="" name="form-filter-monsters" >
+        <form action="index.php" name="form-filter-monsters" method="post">
         <div style="display: flex">
             <div>
                 <label for="select-field">field: </label>
@@ -20,7 +28,7 @@ ob_start();
             </div>
             <div class="adaptativ-input-container">
                 <label for="inp-search">valeur: </label>
-                <input type="text">
+                <input type="text" required>
             </div>
         </div>
 
