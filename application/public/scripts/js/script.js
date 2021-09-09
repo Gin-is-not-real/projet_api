@@ -2,15 +2,16 @@ let selectFields = document.querySelector('#select-field');
 let adaptativInputContainer = document.querySelector('.adaptativ-input-container');
 //ce tableau defini quels champs doivent aussi generer un select, et leurs options
 let subSelects = [];
+
 subSelects['ecology_en'] = [
-    {"value": "relict", "text": "relict"},
-    {"value": "piscine wyvern", "text": "piscine wyvern" },
-    {"value": "flying wyvern", "text": "flying wyvern" },
-    {"value": "fanged wyvern", "text": "fanged wyvern" },
-    {"value": "fanged beast", "text": "fanged beast" },
-    {"value": "elder dragon", "text": "elder dragon" },
-    {"value": "brute wyvern", "text": "brute wyvern" },
-    {"value": "bird wyvern", "text": "bird wyvern" },
+    {"value": "Relict", "text": "Relict"},
+    {"value": "Piscine", "text": "piscine wyvern" },
+    {"value": "Flying", "text": "flying wyvern" },
+    {"value": "Fanged", "text": "fanged wyvern" },
+    {"value": "Fanged", "text": "fanged beast" },
+    {"value": "Elder", "text": "elder dragon" },
+    {"value": "Brute", "text": "brute wyvern" },
+    {"value": "Bird", "text": "bird wyvern" },
 ];
 subSelects['size'] = [
     {"value": "small", "text": "small"},
@@ -24,13 +25,12 @@ subSelects['shock_trap'] = subSelects['pitfall_trap'];
 subSelects['vine_trap'] = subSelects['pitfall_trap'];
 
 
-console.log(selectFields);
-
 selectFields.addEventListener('change', function() {
-    if(adaptativInputContainer.childNodes[3] != undefined) {
-        // console.log('il y a un childnode');
-        adaptativInputContainer.childNodes[3].remove();
-    }
+    let inputToRemove = document.getElementsByName('inp-search');
+    console.log(inputToRemove[0]);
+    inputToRemove[0].remove();
+    // console.log(adaptativInputContainer.childNodes[2].remove());
+    // adaptativInputContainer.childNodes[1].remove();
 
     let input;
     if(subSelects[this.value] != undefined) {
@@ -39,7 +39,6 @@ selectFields.addEventListener('change', function() {
     else {
         input = createInput();
     }
-
     adaptativInputContainer.appendChild(input);
 });
 

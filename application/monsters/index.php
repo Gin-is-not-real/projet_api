@@ -28,7 +28,7 @@ $monsters = json_decode(file_get_contents($route));
             </div>
             <div class="adaptativ-input-container">
                 <label for="inp-search">valeur: </label>
-                <input type="text" required>
+                <input type="text" name="inp-search" required>
             </div>
         </div>
 
@@ -50,7 +50,6 @@ foreach($monsters as $elt) {
     <?php
 
     foreach($elt as $key => $value) {
-        // echo $key . ': ' .intval($key) . '<br>';
         echo $key . ': ' . $value . '<br>';
     }
 };
