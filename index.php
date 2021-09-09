@@ -3,9 +3,9 @@ require_once("./api.php");
 //http://localhost/FOLDERS/FORM_PROJETS/form_projet_api/projet_api/index.php?demande=monsters
 
 //index.php?demande=monsters
+//index.php?demande=monsters&field=name_en&value=Aptonoth
 
-
-getMonstersByField('name_en', 'Aptonoth');
+// getMonstersByField('name_en', 'Aptonoth');
 
 try {
     if(!empty($_GET['demande'])) {
@@ -14,36 +14,31 @@ try {
         switch($url[0]) {
             case "monsters":
                 if(empty($url[1])) {
-                    //getMonters();
+                    getMonsters();
                 }
                 else {
-                    //getMonstersBy..($url[1]);
-
+                    getMonstersByField($url[1], $url[2]);
                 }
             break;
             
             case "weapons":
-                if(!empty($url[1])) {
-                    //getWeapons()
+                if(empty($url[1])) {
+                    getWeapons();
                 }
                 else {
-                    //getWeaponsBy..()
+                    getWeaponsByField($url[1], $url[2]);
                 }
             break;
 
             case "armors":
-                if(!empty($url[1])) {
-                    //getArmors()
+                if(empty($url[1])) {
+                    getArmors();
                 }
                 else {
-                    //getArmorsBy..()
+                    getArmorsByField($url[1], $url[2]);
                 }
+            break;
         }
-        die(var_dump($url[0]));
-
-        // switch($url[0]) {
-
-        // }
     }
     else {
         throw new Exception ("Aucune demande passée dans l'url");
