@@ -8,7 +8,6 @@ if(isset($_POST["select-field"]) AND isset($_POST['inp-search'])) {
 }
 
 $monsters = json_decode(file_get_contents($route));
-
 ?>
 
 <article>
