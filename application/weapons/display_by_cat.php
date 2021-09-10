@@ -1,13 +1,45 @@
 <?php
-$route = "http://localhost/ACS_project/projet_api/api/weapons/";
+// $weapons = json_decode(file_get_contents("http://localhost/ACS_project/projet_api/api/weapons/" . $_GET['field'] . "/" . $_GET['value']));
+
+$route = "http://localhost/FOLDERS/FORM_PROJETS/form_projet_api/projet_api/api/weapons/";
+
 if(isset($_POST['field']) && isset($_POST['value']))
 	$route .= "/" . $_POST['field'] . "/" . $_POST['value'];
-// $weapons = json_decode(file_get_contents("http://localhost/ACS_project/projet_api/api/weapons/" . $_GET['field'] . "/" . $_GET['value']));
+
+if(isset($_POST['select-field']) && isset($_POST['inp-search']))
+	$route .= "/" . $_POST['value'] ."/" . $_POST['select-field'] . "/" . $_POST['inp-search'];
+
 $weapons = json_decode(file_get_contents($route));
+
 ob_start();
 ?>
 
 <h1>All <?= str_replace('-', ' ', $_POST['value']) ?></h1>
+
+<div>
+	<form action="" name="form-filter-weapons" method="post">
+		<input type="text" name="weapon_type" value="<?= $_POST['value'] ?>">
+		<div>
+			<div>
+				<label for="select-field">field: </label>
+				<select name="select-field" id="select-field">
+					<option value="rarity">rareté</option>
+					<option value="name_en" selected>nom</option>
+					<option value="element1">element type</option>
+				</select>
+			</div>
+			<div class="adaptativ-input-container">
+                <label for="inp-search">valeur: </label>
+                <input type="text" name="inp-search" required>
+            </div>
+		</div>
+		
+        <div>
+            <input type="submit">
+        </div>
+	</form>
+</div>
+
 <table id="main">
 	<tr>
 		<td>Name</td>

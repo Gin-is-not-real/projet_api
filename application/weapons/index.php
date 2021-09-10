@@ -3,6 +3,7 @@
 ob_start();
 ?>
 
+
 <div id="choose_box">
 	<form action="display_by_cat.php" method="post">
 		<input type="hidden" name="field" value="weapon_type"/>

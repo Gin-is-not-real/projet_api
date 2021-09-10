@@ -5,7 +5,7 @@ let subSelects = [];
 
 subSelects['ecology_en'] = [
     {"value": "Relict", "text": "Relict"},
-    {"value": "Piscine", "text": "piscine wyvern" },
+    {"value": "Piscine", "text": "Piscine wyvern" },
     {"value": "Flying", "text": "flying wyvern" },
     {"value": "Fanged", "text": "fanged wyvern" },
     {"value": "Fanged", "text": "fanged beast" },
@@ -23,7 +23,26 @@ subSelects['pitfall_trap'] = [
 ];
 subSelects['shock_trap'] = subSelects['pitfall_trap'];
 subSelects['vine_trap'] = subSelects['pitfall_trap'];
+/////////////////////////////////////////////////////
+//WEAPONS
+subSelects['rarity'] = [];
+for(let i = 1; i <= 12; i++ ) {
+    subSelects['rarity'].push({'value': i, 'text': i});
+}
 
+subSelects['element1'] = [
+    {'value': 'None'},
+    {'value': 'Poison'},
+    {'value': 'Dragon'},
+    {'value': 'Thunder'},
+    {'value': 'Ice'},
+    {'value': 'Water'},
+    {'value': 'Paralysis'},
+    {'value': 'Fire'},
+    {'value': 'None'},
+    {'value': 'Sleep'},
+    {'value': 'Blast'},
+];
 
 selectFields.addEventListener('change', function() {
     let inputToRemove = document.getElementsByName('inp-search');
@@ -59,7 +78,7 @@ function createSelect(array) {
     array.forEach(element => {
         let option = document.createElement('option');
         option.value = element.value;
-        option.textContent = element.text;    
+        option.textContent = element.text ? element.text : element.value;    
         select.appendChild(option);
     });
 
