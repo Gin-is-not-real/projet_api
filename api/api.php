@@ -55,10 +55,28 @@ function getWeapons()
 	sendJSON($res);
 }
 
+// function getWeaponsByField($category, $field = null, $value = null) {
+// 	die(var_dump($category, $field, $value));
+// 	$pdo = get_db();
+// 	$strQuery = "SELECT * FROM weapons WHERE weapon_type LIKE '" . "' " . $category . "'";
+// 	if($field != null AND $value != null) {
+// 		$strQuery .= " WHERE " . $field . " LIKE '" . $value . "%'";
+// 	}
+// 	$query = $pdo->prepare($strQuery);
+// 	$query->execute();
+// 	$res = $query->fetchAll();
+
+// 	$query->closeCursor();
+// 	// $json = json_encode($res);
+// 	sendJSON($res);
+// }
+
 function getWeaponsByField($field, $value)
 {
 	$pdo = get_db();
-	$query = $pdo->prepare("SELECT * FROM weapons WHERE " . $field . " LIKE '" . $value ."%'");
+	$query = $pdo->prepare("SELECT * 
+	FROM weapons 
+	WHERE " . $field . " LIKE '" . $value . "%'");
 	$query->execute();
 	$res = $query->fetchAll();
 	// if (empty($res))
