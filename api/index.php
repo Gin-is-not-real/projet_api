@@ -24,9 +24,10 @@ try {
                 if(empty($url[1])) {
                     getWeapons();
                 }
-                else {
+                else if ($url[1] == 'weapon_type')
                     getWeaponsByField($url[1], $url[2]);
-                }
+				else if ($url[1] == 'id')
+					getWeaponsDetails($url[2]);
             break;
 
             case "armors":
