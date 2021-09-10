@@ -8,13 +8,14 @@
 </head>
 <body>
     <header>
+		<?php $base_url = "http://localhost/ACS_project/projet_api/application/"; ?>
         <nav>
             <ul>
                 <li>
-                    <a href="monsters/index.php">monstres</a>
+                    <a href=<?= $base_url . "monsters/index.php" ?>>monstres</a>
                 </li>
                 <li>
-                    <a href="weapons/index.php">armes</a>
+                    <a href=<?= $base_url . "weapons/index.php" ?>>armes</a>
                 </li>
                 <li>
                     <a href="">armures</a>
