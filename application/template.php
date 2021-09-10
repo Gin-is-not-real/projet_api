@@ -11,7 +11,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="">monstres</a>
+                    <a href="monsters/index.php">monstres</a>
                 </li>
                 <li>
                     <a href="weapons/index.php">armes</a>
@@ -23,8 +23,12 @@
         </nav>
     </header>
 
+    <hr>
+
     <main>
         <?= $content ?>
     </main>
+
+    <script src="../public/scripts/js/script.js"></script>
 </body>
 </html>

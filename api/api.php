@@ -29,7 +29,7 @@ function getMonsters()
 function getMonstersByField($field, $value)
 {
 	$pdo = get_db();
-	$query = $pdo->prepare("SELECT * FROM monsters WHERE " . $field . "='" . $value ."'");
+	$query = $pdo->prepare("SELECT * FROM monsters WHERE " . $field . " LIKE '" . $value ."%'");
 	$query->execute();
 	$res = $query->fetchAll();
 	// if (empty($res))
@@ -58,7 +58,7 @@ function getWeapons()
 function getWeaponsByField($field, $value)
 {
 	$pdo = get_db();
-	$query = $pdo->prepare("SELECT * FROM weapons WHERE " . $field . "='" . $value ."'");
+	$query = $pdo->prepare("SELECT * FROM weapons WHERE " . $field . " LIKE '" . $value ."%'");
 	$query->execute();
 	$res = $query->fetchAll();
 	// if (empty($res))
@@ -90,7 +90,7 @@ function getArmors()
 function getArmorsByField($field, $value)
 {
 	$pdo = get_db();
-	$query = $pdo->prepare("SELECT * FROM armors WHERE " . $field . "='" . $value ."'");
+	$query = $pdo->prepare("SELECT * FROM armors WHERE " . $field . " LIKE '" . $value ."%'");
 	$query->execute();
 	$res = $query->fetchAll();		
 	// if (empty($res))
