@@ -12,13 +12,13 @@
         <nav>
             <ul>
                 <li>
-                    <a href=<?= $base_url . "monsters/index.php" ?>>monstres</a>
+                    <a href=<?= $base_url . "monsters/index.php" ?>>Monsters</a>
                 </li>
                 <li>
-                    <a href=<?= $base_url . "weapons/index.php" ?>>armes</a>
+                    <a href=<?= $base_url . "weapons/index.php" ?>>Weapons</a>
                 </li>
                 <li>
-                    <a href="">armures</a>
+                    <a href="">Armors</a>
                 </li>
             </ul>
         </nav>
