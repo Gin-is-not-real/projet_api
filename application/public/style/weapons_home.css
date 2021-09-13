@@ -16,10 +16,12 @@ div#choose_box
 	gap: 12px;
 }
 
-div#choose_box form input
+div#choose_box a
 {
 	font-family: Abel;
-	font-size: 18px;
+	font-size: 20px;
+	color: #252525;
 	border: solid 1px #252525;
 	border-radius: 8px;
+	padding: 1px 6px;
 }
