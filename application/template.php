@@ -18,14 +18,14 @@
         <nav>
             <ul>
                 <li>
-                    <a href="<?= $_SESSION['base-url'] . 'application/' ?>index.php?action=monsters">monstres</a>
+                    <a href="<?= $_SESSION['base-url'] . 'application/' ?>index.php?action=monsters">Monsters</a>
                 </li>
                 <li>
-                    <a href="<?= $_SESSION['base-url'] . 'application/' ?>index.php?action=weapons">armes</a>
+                    <a href="<?= $_SESSION['base-url'] . 'application/' ?>index.php?action=weapons">Weapons</a>
 
                 </li>
                 <li>
-                    <a href="<?= $_SESSION['base-url'] . 'application/' ?>index.php?action=armors">armures</a>
+                    <a href="<?= $_SESSION['base-url'] . 'application/' ?>index.php?action=armors">Armors</a>
 
                 </li>
             </ul>

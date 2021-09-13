@@ -3,21 +3,21 @@ let subSelects = [];
 
 subSelects['ecology_en'] = [
     {"value": "Relict", "text": "Relict"},
-    {"value": "Piscine", "text": "Piscine wyvern" },
-    {"value": "Flying", "text": "flying wyvern" },
-    {"value": "Fanged", "text": "fanged wyvern" },
-    {"value": "Fanged", "text": "fanged beast" },
-    {"value": "Elder", "text": "elder dragon" },
-    {"value": "Brute", "text": "brute wyvern" },
-    {"value": "Bird", "text": "bird wyvern" },
+    {"value": "Piscine", "text": "Piscine Wyvern" },
+    {"value": "Flying", "text": "Flying Wyvern" },
+    {"value": "Fanged", "text": "Fanged Wyvern" },
+    {"value": "Fanged", "text": "Fanged Beast" },
+    {"value": "Elder", "text": "Elder Dragon" },
+    {"value": "Brute", "text": "Brute Wyvern" },
+    {"value": "Bird", "text": "Bird Wyvern" },
 ];
 subSelects['size'] = [
-    {"value": "small", "text": "small"},
-    {"value": "large", "text": "large"},
+    {"value": "small", "text": "Small"},
+    {"value": "large", "text": "Large"},
 ];
 subSelects['pitfall_trap'] = [
-    {"value": "true", "text": "oui"},
-    {"value": "", "text": "non"},
+    {"value": "true", "text": "Yes"},
+    {"value": "", "text": "No"},
 ];
 subSelects['shock_trap'] = subSelects['pitfall_trap'];
 subSelects['vine_trap'] = subSelects['pitfall_trap'];

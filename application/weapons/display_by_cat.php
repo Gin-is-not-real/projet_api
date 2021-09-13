@@ -22,20 +22,20 @@ ob_start();
 	<form action="../../application/index.php?action=weapons-filtered&weapon_type=<?= $weapon_type; ?>" name="form-filter-weapons" method="post">
 		<div id="fil_inputs">
 			<div>
-				<label for="select-field">field: </label>
+				<label for="select-field">Criteria: </label>
 				<select name="select-field" id="select-field">
-					<option value="rarity">rareté</option>
-					<option value="name_en" selected>nom</option>
-					<option value="element1">element type</option>
+					<option value="rarity">Rarity</option>
+					<option value="name_en" selected>Name</option>
+					<option value="element1">Element type</option>
 				</select>
 			</div>
 			<div class="adaptativ-input-container">
-                <label for="inp-search">valeur: </label>
+                <label for="inp-search">Value: </label>
                 <input type="text" name="inp-search" required>
             </div>
 		</div>		
         <div id="fil_sender">
-            <input type="submit">
+            <input type="submit" value="Search">
         </div>
 </form>
 </div>
