@@ -6,8 +6,24 @@ if(session_id() == '') {
 ob_start();
 ?>
 
+<div id="choose_box" style="display: flex; flex-direction: column"> 
+	<a href='../index.php?action=weapons-type&weapon_type=great-sword'>See great sword</a>
+	<a href='../index.php?action=weapons-type&weapon_type=long-sword'>See long sword</a>
+	<a href='../index.php?action=weapons-type&weapon_type=sword-and-shield'>See sword and shield</a>
+	<a href='../index.php?action=weapons-type&weapon_type=dual-blades'>See dual blades</a>
+	<a href='../index.php?action=weapons-type&weapon_type=hammer'>See hammers</a>
+	<a href='../index.php?action=weapons-type&weapon_type=hunting-horn'>See hunting horn</a>
+	<a href='../index.php?action=weapons-type&weapon_type=lance'>See lances</a>
+	<a href='../index.php?action=weapons-type&weapon_type=gunlance'>See gunlances</a>
+	<a href='../index.php?action=weapons-type&weapon_type=switch-axe'>See switch axes</a>
+	<a href='../index.php?action=weapons-type&weapon_type=charge-blade'>See charge blades</a>
+	<a href='../index.php?action=weapons-type&weapon_type=insect-glaive'>See insect blades</a>
+	<a href='../index.php?action=weapons-type&weapon_type=light-bowgun'>See light bowguns</a>
+	<a href='../index.php?action=weapons-type&weapon_type=heavy-bowgun'>See heavy-bowguns</a>
+	<a href='../index.php?action=weapons-type&weapon_type=bow'>See bows</a>
+</div>
 
-<div id="choose_box">
+<!-- <div id="choose_box">
 	<form action="display_by_cat.php" method="post">
 		<input type="hidden" name="field" value="weapon_type"/>
 		<input type="hidden" name="value" value="great-sword"/>
@@ -78,8 +94,7 @@ ob_start();
 		<input type="hidden" name="value" value="bow"/>
 		<input type="submit" value="See Bow"/>
 	</form>
-	<!-- <a href="display_by_cat.php?field=weapon_type&value=bow">See bow</a> -->
-</div>
+</div> -->
 
 <?php
 $content = ob_get_clean();

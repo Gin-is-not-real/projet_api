@@ -2,10 +2,8 @@
 if(session_id() == '') {
     session_start();
 }
-$route = $_SESSION['base-url'] . 'api/weapons/';
-$weapons = json_decode(file_get_contents($route . $_GET['field'] . "/" . $_GET['value']));
-
-// $weapons = json_decode(file_get_contents("http://localhost/ACS_project/projet_api/api/weapons/" . $_GET['field'] . "/" . $_GET['value']));
+$route = $_SESSION['base-url'] . 'api/weapons/id/' . $_GET['id'];
+$weap_details = json_decode(file_get_contents($route));
 
 ob_start();
 // var_dump(($weap_craft));
