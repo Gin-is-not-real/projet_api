@@ -40,6 +40,5 @@
 
     <script src="../public/scripts/js/subSelectFields.js"></script>
     <script src="../public/scripts/js/script.js"></script>
-    <script src="../public/scripts/js/filters.js"></script>
 </body>
 </html>

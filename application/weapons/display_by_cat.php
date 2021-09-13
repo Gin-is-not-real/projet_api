@@ -19,7 +19,6 @@ ob_start();
 
 <div>
 	<form action="../../application/index.php?action=weapons-filtered&weapon_type=<?= $weapon_type; ?>" name="form-filter-weapons" method="post">
-		<!-- <input type="" name="weapon_type" id="weapon_type" value="<?= $_POST['value'] ?>"> -->
 		<div>
 			<div>
 				<label for="select-field">field: </label>
@@ -36,9 +35,6 @@ ob_start();
 		</div>
 		
         <div>
-			
-			<button id="js-submit" value="<?= $_POST['value'] ?>">soumettre en js</button>
-
             <input type="submit">
         </div>
 </form>
