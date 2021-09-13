@@ -14,6 +14,7 @@ $weapons = json_decode(file_get_contents($route));
 
 ob_start();
 ?>
+<link rel="stylesheet" href="../public/style/weapons_list.css" />
 
 <h1>All <?= str_replace('-', ' ', $weapon_type) ?></h1>
 
@@ -41,7 +42,7 @@ ob_start();
 </div>
 
 <table id="main">
-	<tr>
+	<tr id="table_label">
 		<td>Name</td>
 		<td>Previous upgrade</td>
 		<td>Rarity</td>

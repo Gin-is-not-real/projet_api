@@ -1,0 +1,33 @@
+h1
+{
+	font-family: Audiowide;
+	font-size: 25px;
+	border: solid 3px #252525;
+	border-radius: 10px;
+	padding: 1px 6px;
+	margin-bottom: 40px;
+}
+
+td, td a
+{
+	font-family: Abel;
+	font-size: 18px;
+	color: #252525;
+	text-align: center;
+}
+
+tr#table_label
+{
+	background-color: #252525;
+}
+
+tr#table_label td
+{
+	font-weight: bold;
+	color: #e5e5e5;
+}
+
+tr.data td
+{
+	border: solid 2px #252525;
+}

@@ -5,22 +5,24 @@ if(session_id() == '') {
 // $weapons = json_decode(file_get_contents("http://localhost/ACS_project/projet_api/api/weapons"));
 ob_start();
 ?>
+<link rel="stylesheet" href="../public/style/weapons_home.css" />
 
-<div id="choose_box" style="display: flex; flex-direction: column"> 
-	<a href='../index.php?action=weapons-type&weapon_type=great-sword'>See great sword</a>
-	<a href='../index.php?action=weapons-type&weapon_type=long-sword'>See long sword</a>
-	<a href='../index.php?action=weapons-type&weapon_type=sword-and-shield'>See sword and shield</a>
-	<a href='../index.php?action=weapons-type&weapon_type=dual-blades'>See dual blades</a>
-	<a href='../index.php?action=weapons-type&weapon_type=hammer'>See hammers</a>
-	<a href='../index.php?action=weapons-type&weapon_type=hunting-horn'>See hunting horn</a>
-	<a href='../index.php?action=weapons-type&weapon_type=lance'>See lances</a>
-	<a href='../index.php?action=weapons-type&weapon_type=gunlance'>See gunlances</a>
-	<a href='../index.php?action=weapons-type&weapon_type=switch-axe'>See switch axes</a>
-	<a href='../index.php?action=weapons-type&weapon_type=charge-blade'>See charge blades</a>
-	<a href='../index.php?action=weapons-type&weapon_type=insect-glaive'>See insect blades</a>
-	<a href='../index.php?action=weapons-type&weapon_type=light-bowgun'>See light bowguns</a>
-	<a href='../index.php?action=weapons-type&weapon_type=heavy-bowgun'>See heavy-bowguns</a>
-	<a href='../index.php?action=weapons-type&weapon_type=bow'>See bows</a>
+<h1>Select a weapon type</h1>
+<div id="choose_box">
+	<a href='../index.php?action=weapons-type&weapon_type=great-sword'>See Great Sword</a>
+	<a href='../index.php?action=weapons-type&weapon_type=long-sword'>See Long Sword</a>
+	<a href='../index.php?action=weapons-type&weapon_type=sword-and-shield'>See Sword and Shield</a>
+	<a href='../index.php?action=weapons-type&weapon_type=dual-blades'>See Dual Blades</a>
+	<a href='../index.php?action=weapons-type&weapon_type=hammer'>See Hammers</a>
+	<a href='../index.php?action=weapons-type&weapon_type=hunting-horn'>See Hunting Horn</a>
+	<a href='../index.php?action=weapons-type&weapon_type=lance'>See Lances</a>
+	<a href='../index.php?action=weapons-type&weapon_type=gunlance'>See Gunlances</a>
+	<a href='../index.php?action=weapons-type&weapon_type=switch-axe'>See Switch Axes</a>
+	<a href='../index.php?action=weapons-type&weapon_type=charge-blade'>See Charge Blades</a>
+	<a href='../index.php?action=weapons-type&weapon_type=insect-glaive'>See Insect Blades</a>
+	<a href='../index.php?action=weapons-type&weapon_type=light-bowgun'>See Light Bowguns</a>
+	<a href='../index.php?action=weapons-type&weapon_type=heavy-bowgun'>See Heavy Bowguns</a>
+	<a href='../index.php?action=weapons-type&weapon_type=bow'>See Bows</a>
 </div>
 
 <?php
