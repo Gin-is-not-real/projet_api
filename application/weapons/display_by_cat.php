@@ -1,4 +1,15 @@
 <?php
+<<<<<<< HEAD
+=======
+if(session_id() == '') {
+	session_start();
+}
+$route = $_SESSION['base-url'] . 'api/weapons/';
+// $route = "http://localhost/ACS_project/projet_api/api/weapons/";
+
+if(isset($_POST['field']) && isset($_POST['value']))
+	$route .= "/" . $_POST['field'] . "/" . $_POST['value'];
+>>>>>>> nina
 // $weapons = json_decode(file_get_contents("http://localhost/ACS_project/projet_api/api/weapons/" . $_GET['field'] . "/" . $_GET['value']));
 echo(var_dump($_POST, ' - ' , $_GET));
 

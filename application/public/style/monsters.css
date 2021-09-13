@@ -1,0 +1,96 @@
+@font-face
+{
+	font-family: Abel;
+	src: url("Abel-Regular.ttf");
+}
+
+@font-face
+{
+	font-family: Audiowibe;
+	src: url("Audiowibe-Regular.ttf");
+}
+
+html, body
+{
+	margin: 0px;
+	background-color: #e5e5e5;
+}
+
+body, article
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+header
+{
+	background-color: #252525;
+	width: 100%;
+}
+
+a
+{
+	text-decoration: none;
+	font-family: Abel;
+	font-size: 20px;
+	color: #e5e5e5;
+}
+
+header ul,
+article div#pctrs
+{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+header ul
+{
+	gap: 40px;
+}
+
+article div#filter form
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+
+article div#filter form div#fil_inputs
+{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	gap: 15px;
+}
+
+article div#filter form input,
+article div#filter form select,
+article div#filter form label
+{
+	font-size: 18px;
+	font-family: Abel;
+	border-radius: 8px;
+	outline: none;
+}
+
+article div#filter form input,
+article div#filter form select
+{
+	border: solid 1px #252525;
+}
+
+article div#pctrs figure
+{
+	border-radius: 10px;
+	margin: 20px;
+}
+
+article div#pctrs figure figcaption
+{
+	font-size: 18px;
+	font-family: Abel;
+	border-radius: 10px 10px 0px 0px;
+}

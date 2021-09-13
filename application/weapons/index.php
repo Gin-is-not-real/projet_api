@@ -1,4 +1,7 @@
 <?php
+if(session_id() == '') {
+	session_start();
+}
 // $weapons = json_decode(file_get_contents("http://localhost/ACS_project/projet_api/api/weapons"));
 ob_start();
 ?>
