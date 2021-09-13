@@ -29,7 +29,6 @@ for(let i = 1; i <= 12; i++ ) {
 }
 
 subSelects['element1'] = [
-    {'value': 'None'},
     {'value': 'Poison'},
     {'value': 'Dragon'},
     {'value': 'Thunder'},

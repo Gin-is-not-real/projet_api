@@ -20,7 +20,7 @@ ob_start();
 
 <div>
 	<form action="../../application/index.php?action=weapons-filtered&weapon_type=<?= $weapon_type; ?>" name="form-filter-weapons" method="post">
-		<div>
+		<div id="fil_inputs">
 			<div>
 				<label for="select-field">field: </label>
 				<select name="select-field" id="select-field">
@@ -34,7 +34,7 @@ ob_start();
                 <input type="text" name="inp-search" required>
             </div>
 		</div>		
-        <div>
+        <div id="fil_sender">
             <input type="submit">
         </div>
 </form>
