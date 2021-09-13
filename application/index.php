@@ -1,6 +1,4 @@
 <?php
-$GLOBALS['base-url'] = 'test';
-
 if(session_id() == '') {
     session_start();
 }
