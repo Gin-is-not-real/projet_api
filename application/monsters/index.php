@@ -1,7 +1,12 @@
 <?php
 
+if(session_id() == '') {
+    session_start();
+}
+
 ob_start();
-$route = "http://localhost/ACS_project/projet_api/api/monsters/";
+// $route = "http://localhost/FOLDERS/FORM_PROJETS/form_projet_api/projet_api/api/monsters";
+$route = $_SESSION['base-url'] . 'api/monsters';
 
 if(isset($_POST["select-field"]) AND isset($_POST['inp-search'])) {
     $route .= '/' . $_POST['select-field'] . '/' . $_POST['inp-search'];

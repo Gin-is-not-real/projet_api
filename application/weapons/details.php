@@ -1,7 +1,12 @@
 <?php
-$url = "http://localhost/ACS_project/projet_api/api/weapons/id/" . $_GET['value'];
-$weap_details = json_decode(file_get_contents($url));
-// $weap_craft = json_decode(file_get_contents("http://localhost/ACS_project/projet_api/api/weapons/name_en/" . $weapon[0]->name_en));
+if(session_id() == '') {
+    session_start();
+}
+$route = $_SESSION['base-url'] . 'api/weapons/';
+$weapons = json_decode(file_get_contents($route . $_GET['field'] . "/" . $_GET['value']));
+
+// $weapons = json_decode(file_get_contents("http://localhost/ACS_project/projet_api/api/weapons/" . $_GET['field'] . "/" . $_GET['value']));
+
 ob_start();
 // var_dump(($weap_craft));
 ?>

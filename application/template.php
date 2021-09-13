@@ -6,19 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<?php 
+    if(session_id() == '') {
+        session_start();
+    }
+    // $base_url = 'http://localhost/FOLDERS/FORM_PROJETS/form_projet_api/projet_api/application/';
+?>
 <body>
     <header>
 		<?php $base_url = "http://localhost/ACS_project/projet_api/application/"; ?>
         <nav>
             <ul>
                 <li>
-                    <a href=<?= $base_url . "monsters/index.php" ?>>Monsters</a>
+                    <a href="<?= $_SESSION['base-url'] . 'application/' ?>index.php?action=monsters">monstres</a>
                 </li>
                 <li>
-                    <a href=<?= $base_url . "weapons/index.php" ?>>Weapons</a>
+                    <a href="<?= $_SESSION['base-url'] . 'application/' ?>index.php?action=weapons">armes</a>
+
                 </li>
                 <li>
-                    <a href="">Armors</a>
+                    <a href="<?= $_SESSION['base-url'] . 'application/' ?>index.php?action=armors">armures</a>
+
                 </li>
             </ul>
         </nav>
