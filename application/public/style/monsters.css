@@ -1,53 +1,15 @@
-@font-face
-{
-	font-family: Abel;
-	src: url("Abel-Regular.ttf");
-}
-
-@font-face
-{
-	font-family: Audiowibe;
-	src: url("Audiowibe-Regular.ttf");
-}
-
-html, body
-{
-	margin: 0px;
-	background-color: #e5e5e5;
-}
-
-body, article
+article
 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-header
-{
-	background-color: #252525;
-	width: 100%;
-}
-
-a
-{
-	text-decoration: none;
-	font-family: Abel;
-	font-size: 20px;
-	color: #e5e5e5;
-}
-
-header ul,
 article div#pctrs
 {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
-}
-
-header ul
-{
-	gap: 40px;
 }
 
 article div#filter form
@@ -84,13 +46,21 @@ article div#filter form select
 
 article div#pctrs figure
 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid black;
 	border-radius: 10px;
+	width: 200px;
 	margin: 20px;
 }
 
 article div#pctrs figure figcaption
 {
+	background-color: #80808091;
+	text-align: center;
 	font-size: 18px;
 	font-family: Abel;
 	border-radius: 10px 10px 0px 0px;
+	width: 100%;
 }

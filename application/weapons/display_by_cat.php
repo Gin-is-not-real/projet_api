@@ -5,16 +5,17 @@ if(session_id() == '') {
 $route = $_SESSION['base-url'] . 'api/weapons/';
 // $route = "http://localhost/ACS_project/projet_api/api/weapons/";
 
-if(isset($_POST['field']) && isset($_POST['value']))
-	$route .= "/" . $_POST['field'] . "/" . $_POST['value'];
+if(isset($_GET['field']) && isset($_GET['value']))
+	$route .= "/" . $_GET['field'] . "/" . $_GET['value'];
 // $weapons = json_decode(file_get_contents("http://localhost/ACS_project/projet_api/api/weapons/" . $_GET['field'] . "/" . $_GET['value']));
 $weapons = json_decode(file_get_contents($route));
 ob_start();
 ?>
+<link rel="stylesheet" href="../public/style/weapons_list.css" />
 
-<h1>All <?= str_replace('-', ' ', $_POST['value']) ?></h1>
+<h1>All <?= str_replace('-', ' ', $_GET['weapon_type']) ?></h1>
 <table id="main">
-	<tr>
+	<tr id="table_label">
 		<td>Name</td>
 		<td>Previous upgrade</td>
 		<td>Rarity</td>
@@ -23,12 +24,12 @@ ob_start();
 		<td>Element type</td>
 		<td>Element damage</td>
 		<td>Gem slot</td>
-		<?php if ($_POST['value'] == "insect-glaive")
+		<?php if ($_GET['weapon_type'] == "insect-glaive")
 			echo "<td>Kinsect bonus</td>";
 		?>
 	</tr>
 	<?php foreach ($weapons as $elm) { ?>
-		<tr>
+		<tr class="data">
 			<?= '<td><a href="details.php?field=id&value=' . $elm->id . '"</a>' . $elm->name_en . '</td>'?>
 			<td><?= ($elm->previous_en == '' ? "None" : $elm->previous_en); ?></td>
 			<td><?= $elm->rarity ?></td>

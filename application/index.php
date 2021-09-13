@@ -5,7 +5,7 @@ if(session_id() == '') {
     session_start();
 }
 
-$_SESSION['base-url'] = 'http://localhost/FOLDERS/FORM_PROJETS/form_projet_api/projet_api/';
+$_SESSION['base-url'] = 'http://localhost/ACS_project/projet_api/';
 
 try {
     if(!isset($_GET['action'])) {
@@ -21,6 +21,9 @@ try {
             case 'weapons':
                 header('Location: weapons/index.php');
                 break;
+			case 'weapons-type':
+				header('Location: weapons/display_by_cat.php');
+				break;
             case 'armors':
                 header('Location: armors/index.php');
         }

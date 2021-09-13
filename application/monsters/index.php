@@ -46,8 +46,8 @@ $monsters = json_decode(file_get_contents($route));
 <?php
 foreach($monsters as $elt) {
 ?>
-    <figure style="border: 1px solid black; width: 200px; display: flex; flex-direction: column; align-items: center" >
-        <figcaption style="background-color: #80808091; text-align: center; width: 100%">
+    <figure>
+        <figcaption>
             <?= $elt->name_en ?>
         </figcaption>
         <img src="../public/images/monsters/<?= $elt->id ?>.png" width="200px">

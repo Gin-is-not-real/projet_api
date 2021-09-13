@@ -1,0 +1,25 @@
+h1
+{
+	font-family: Audiowide;
+	font-size: 25px;
+	border: solid 3px #252525;
+	border-radius: 10px;
+	padding: 1px 6px;
+	margin-bottom: 40px;
+}
+
+div#choose_box
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+}
+
+div#choose_box form input
+{
+	font-family: Abel;
+	font-size: 18px;
+	border: solid 1px #252525;
+	border-radius: 8px;
+}

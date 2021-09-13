@@ -5,79 +5,29 @@ if(session_id() == '') {
 // $weapons = json_decode(file_get_contents("http://localhost/ACS_project/projet_api/api/weapons"));
 ob_start();
 ?>
+<link rel="stylesheet" href="../public/style/weapons_home.css" />
 
+<h1>Select a weapon type</h1>
 <div id="choose_box">
-	<form action="display_by_cat.php" method="post">
+	<a href='../index.php?action=weapons-type&weapon_type=great-sword'>See Great Sword</a>
+	<a href='../index.php?action=weapons-type&weapon_type=long-sword'>See Long Sword</a>
+	<a href='../index.php?action=weapons-type&weapon_type=sword-and-shield'>See Sword and Shield</a>
+	<a href='../index.php?action=weapons-type&weapon_type=dual-blades'>See Dual Blades</a>
+	<a href='../index.php?action=weapons-type&weapon_type=hammer'>See Hammers</a>
+	<a href='../index.php?action=weapons-type&weapon_type=hunting-horn'>See Hunting Horn</a>
+	<a href='../index.php?action=weapons-type&weapon_type=lance'>See Lances</a>
+	<a href='../index.php?action=weapons-type&weapon_type=gunlance'>See Gunlances</a>
+	<a href='../index.php?action=weapons-type&weapon_type=switch-axe'>See Switch Axes</a>
+	<a href='../index.php?action=weapons-type&weapon_type=charge-blade'>See Charge Blades</a>
+	<a href='../index.php?action=weapons-type&weapon_type=insect-glaive'>See Insect Blades</a>
+	<a href='../index.php?action=weapons-type&weapon_type=light-bowgun'>See Light Bowguns</a>
+	<a href='../index.php?action=weapons-type&weapon_type=heavy-bowgun'>See Heavy Bowguns</a>
+	<a href='../index.php?action=weapons-type&weapon_type=bow'>See Bows</a>
+	<!-- <form action="display_by_cat.php" method="post">
 		<input type="hidden" name="field" value="weapon_type"/>
 		<input type="hidden" name="value" value="great-sword"/>
 		<input type="submit" value="See Great Sword"/>
-	</form>
-	<form action="display_by_cat.php" method="post">
-		<input type="hidden" name="field" value="weapon_type"/>
-		<input type="hidden" name="value" value="long-sword"/>
-		<input type="submit" value="See Long Sword"/>
-	</form>
-	<form action="display_by_cat.php" method="post">
-		<input type="hidden" name="field" value="weapon_type"/>
-		<input type="hidden" name="value" value="sword-and-shield"/>
-		<input type="submit" value="See Sword and Shield"/>
-	</form>
-	<form action="display_by_cat.php" method="post">
-		<input type="hidden" name="field" value="weapon_type"/>
-		<input type="hidden" name="value" value="dual-blades"/>
-		<input type="submit" value="See Dual Blades"/>
-	</form>
-	<form action="display_by_cat.php" method="post">
-		<input type="hidden" name="field" value="weapon_type"/>
-		<input type="hidden" name="value" value="hammer"/>
-		<input type="submit" value="See Hammer"/>
-	</form>
-	<form action="display_by_cat.php" method="post">
-		<input type="hidden" name="field" value="weapon_type"/>
-		<input type="hidden" name="value" value="hunting-horn"/>
-		<input type="submit" value="See Hunting Horn"/>
-	</form>
-	<form action="display_by_cat.php" method="post">
-		<input type="hidden" name="field" value="weapon_type"/>
-		<input type="hidden" name="value" value="lance"/>
-		<input type="submit" value="See Lance"/>
-	</form>
-	<form action="display_by_cat.php" method="post">
-		<input type="hidden" name="field" value="weapon_type"/>
-		<input type="hidden" name="value" value="gunlance"/>
-		<input type="submit" value="See Gunlance"/>
-	</form>
-	<form action="display_by_cat.php" method="post">
-		<input type="hidden" name="field" value="weapon_type"/>
-		<input type="hidden" name="value" value="switch-axe"/>
-		<input type="submit" value="See Switch Axe"/>
-	</form>
-	<form action="display_by_cat.php" method="post">
-		<input type="hidden" name="field" value="weapon_type"/>
-		<input type="hidden" name="value" value="charge-blade"/>
-		<input type="submit" value="See Charge Blade"/>
-	</form>
-	<form action="display_by_cat.php" method="post">
-		<input type="hidden" name="field" value="weapon_type"/>
-		<input type="hidden" name="value" value="insect-glaive"/>
-		<input type="submit" value="See Insect Glaive"/>
-	</form>
-	<form action="display_by_cat.php" method="post">
-		<input type="hidden" name="field" value="weapon_type"/>
-		<input type="hidden" name="value" value="light-bowgun"/>
-		<input type="submit" value="See Light Bowgun"/>
-	</form>
-	<form action="display_by_cat.php" method="post">
-		<input type="hidden" name="field" value="weapon_type"/>
-		<input type="hidden" name="value" value="heavy-bowgun"/>
-		<input type="submit" value="See Heavy Bowgun"/>
-	</form>
-	<form action="display_by_cat.php" method="post">
-		<input type="hidden" name="field" value="weapon_type"/>
-		<input type="hidden" name="value" value="bow"/>
-		<input type="submit" value="See Bow"/>
-	</form>
-	<!-- <a href="display_by_cat.php?field=weapon_type&value=bow">See bow</a> -->
+	</form> -->
 </div>
 
 <?php
