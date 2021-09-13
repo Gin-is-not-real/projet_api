@@ -34,12 +34,8 @@ ob_start();
                 <label for="inp-search">valeur: </label>
                 <input type="text" name="inp-search" required>
             </div>
-		</div>
-		
+		</div>		
         <div>
-			
-			<button id="js-submit" value="<?= $_POST['value'] ?>">soumettre en js</button>
-
             <input type="submit">
         </div>
 </form>
@@ -61,7 +57,7 @@ ob_start();
 	</tr>
 	<?php foreach ($weapons as $elm) { ?>
 		<!-- <tr class="tab-line"> -->
-		<tr class="tr-name_en-<?= $elm->name_en . ' tr-rarity-' . $elm->rarity . ' tr-element1-' . $elm->element1 ?>">
+		<tr class="data">
 
 			<?= '<td class="td-name_en"><a href="../index.php?action=weapon&id=' . $elm->id . '"</a>' . $elm->name_en . '</td>'?>
 
@@ -69,13 +65,13 @@ ob_start();
 			<td class="td-rarity"><?= $elm->rarity ?></td>
 			<td><?= $elm->attack ?></td>
 			<td><?= $elm->affinity . " %" ?></td>
-			<td class="td-element1"><?= ($elm->element1 == '' ? "None" : $elm->element1 . ' ' . "<img src='../public/images/ui/element_" . $elm->element1 . ".svg' width='20px'/>"); ?></td>
+			<td class="td-element1"><?= ($elm->element1 == '' ? "None" : "<p>" . $elm->element1 .  ' </p>' . "<img src='../public/images/ui/element_" . $elm->element1 . ".svg' width='20px'/>"); ?></td>
 			<td>
 				<?= ($elm->element1_attack == '' ? "None" : $elm->element1_attack); ?>
 				<?= ($elm->element1 == "Dragon" ? " (".$elm->elderseal.")" : ''); ?>
 			</td>
-			<td>
-				<?= ($elm->slot_1 != 0 ? "<img src='../public/images/ui/gem_" . $elm->slot_1 . "_empty.svg' width='20px'/>" : '') ?>
+			<td class="gem_slot">
+				<?= ($elm->slot_1 != 0 ? "<img src='../public/images/ui/gem_" . $elm->slot_1 . "_empty.svg' width='20px'/>" : 'None') ?>
 				<?= ($elm->slot_2 != 0 ? "<img src='../public/images/ui/gem_" . $elm->slot_2 . "_empty.svg' width='20px'/>" : '') ?>
 				<?= ($elm->slot_3 != 0 ? "<img src='../public/images/ui/gem_" . $elm->slot_3 . "_empty.svg' width='20px'/>" : '') ?>
 			</td>
