@@ -59,7 +59,7 @@ function getCategoryWeaponsByField($category, $field, $value) {
 	$pdo = get_db();
 	$query = $pdo->prepare("SELECT * 
 	FROM weapons 
-	WHERE category='" . "'" . $category . "'" . $field . " LIKE '" . $value . "%'");
+	WHERE weapon_type='" . $category . "' AND " . $field . " LIKE '" . $value . "%'");
 	$query->execute();
 	$res = $query->fetchAll();
 

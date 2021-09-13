@@ -26,7 +26,12 @@ try {
                     getWeapons();
                 }
                 else if ($url[1] == 'weapon_type') {
-                    getWeaponsByField($url[1], $url[2]);
+                    if(empty($url[3])) {
+                        getWeaponsByField($url[1], $url[2]);
+                    }
+                    else {
+                        getCategoryWeaponsByField($url[2], $url[3], $url[4]);
+                    }
                 }
 				else if ($url[1] == 'id')
 					getWeaponsDetails($url[2]);

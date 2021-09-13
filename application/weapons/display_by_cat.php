@@ -4,10 +4,10 @@ if(session_id() == '') {
 }
 $weapon_type = $_GET['weapon_type'];
 
-$route = $_SESSION['base-url'] . 'api/weapons/' . 'weapon_type/' . $weapon_type;
+$route = $_SESSION['base-url'] . 'api/weapons/weapon_type/' . $weapon_type;
 
-if(isset($_POST['field']) && isset($_POST['value'])) {
-	$route .= "/" . $_POST['field'] . "/" . $_POST['value'];
+if(isset($_GET['field']) && isset($_GET['value'])) {
+	$route .= "/" . $_GET['field']. "/" . $_GET['value'];
 }
 
 $weapons = json_decode(file_get_contents($route));
@@ -18,7 +18,7 @@ ob_start();
 <h1>All <?= str_replace('-', ' ', $weapon_type) ?></h1>
 
 <div>
-	<form action="../index.php?action=weapons-filtered&weapon_type=<?= $weapon_type; ?>" name="form-filter-weapons" method="post">
+	<form action="../../application/index.php?action=weapons-filtered&weapon_type=<?= $weapon_type; ?>" name="form-filter-weapons" method="post">
 		<!-- <input type="" name="weapon_type" id="weapon_type" value="<?= $_POST['value'] ?>"> -->
 		<div>
 			<div>
