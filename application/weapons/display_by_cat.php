@@ -34,12 +34,16 @@ ob_start();
 			<td><?= $elm->rarity ?></td>
 			<td><?= $elm->attack ?></td>
 			<td><?= $elm->affinity . " %" ?></td>
-			<td><?= ($elm->element1 == '' ? "None" : $elm->element1); ?></td>
+			<td><?= ($elm->element1 == '' ? "None" : $elm->element1 . ' ' . "<img src='../public/images/ui/element_" . $elm->element1 . ".svg' width='20px'/>"); ?></td>
 			<td>
 				<?= ($elm->element1_attack == '' ? "None" : $elm->element1_attack); ?>
 				<?= ($elm->element1 == "Dragon" ? " (".$elm->elderseal.")" : ''); ?>
 			</td>
-			<td><?= "[" . $elm->slot_1 . ' ' . $elm->slot_2 . ' ' . $elm->slot_3 . "]" ?></td>
+			<td>
+				<?= ($elm->slot_1 != 0 ? "<img src='../public/images/ui/gem_" . $elm->slot_1 . "_empty.svg' width='20px'/>" : '') ?>
+				<?= ($elm->slot_2 != 0 ? "<img src='../public/images/ui/gem_" . $elm->slot_2 . "_empty.svg' width='20px'/>" : '') ?>
+				<?= ($elm->slot_3 != 0 ? "<img src='../public/images/ui/gem_" . $elm->slot_3 . "_empty.svg' width='20px'/>" : '') ?>
+			</td>
 			<?php if ($_POST['value'] == "insect-glaive")
 				echo "<td>" . str_replace('_', ' ', $elm->kinsect_bonus) . "</td>";
 			?>
