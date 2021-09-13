@@ -14,6 +14,7 @@
 ?>
 <body>
     <header>
+		<?php $base_url = "http://localhost/ACS_project/projet_api/application/"; ?>
         <nav>
             <ul>
                 <li>

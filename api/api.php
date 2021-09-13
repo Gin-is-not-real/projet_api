@@ -29,7 +29,7 @@ function getMonsters()
 function getMonstersByField($field, $value)
 {
 	$pdo = get_db();
-	$query = $pdo->prepare("SELECT * FROM monsters WHERE " . $field . " LIKE '" . $value ."%'");
+	$query = $pdo->prepare("SELECT * FROM monsters WHERE " . $field . " LIKE '%" . $value ."%'");
 	$query->execute();
 	$res = $query->fetchAll();
 	// if (empty($res))
@@ -73,6 +73,16 @@ function getWeaponsByField($field, $value)
 	// }
 	$query->closeCursor();
 	// $json = json_encode($res);
+	sendJSON($res);
+}
+
+function getWeaponsDetails($id)
+{
+	$pdo = get_db();
+	$query = $pdo->prepare("SELECT * FROM weapons INNER JOIN weapon_craft ON name_en = base_name_en WHERE weapons.id = '".$id."'");
+	$query->execute();
+	$res = $query->fetchAll();
+	$query->closeCursor();
 	sendJSON($res);
 }
 
