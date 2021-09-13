@@ -1,7 +1,0 @@
-monsters/index
-        
-
-weapons/index 
-
-
-armors/index

@@ -2,18 +2,49 @@
 if(session_id() == '') {
 	session_start();
 }
-$route = $_SESSION['base-url'] . 'api/weapons/';
-// $route = "http://localhost/ACS_project/projet_api/api/weapons/";
+$weapon_type = $_GET['weapon_type'];
 
-if(isset($_GET['field']) && isset($_GET['value']))
-	$route .= "/" . $_GET['field'] . "/" . $_GET['value'];
-// $weapons = json_decode(file_get_contents("http://localhost/ACS_project/projet_api/api/weapons/" . $_GET['field'] . "/" . $_GET['value']));
+$route = $_SESSION['base-url'] . 'api/weapons/' . 'weapon_type/' . $weapon_type;
+
+if(isset($_POST['field']) && isset($_POST['value'])) {
+	$route .= "/" . $_POST['field'] . "/" . $_POST['value'];
+}
+
 $weapons = json_decode(file_get_contents($route));
+
 ob_start();
 ?>
 <link rel="stylesheet" href="../public/style/weapons_list.css" />
 
-<h1>All <?= str_replace('-', ' ', $_GET['weapon_type']) ?></h1>
+<h1>All <?= str_replace('-', ' ', $weapon_type) ?></h1>
+
+<div>
+	<form action="../index.php?action=weapons-filtered&weapon_type=<?= $weapon_type; ?>" name="form-filter-weapons" method="post">
+		<!-- <input type="" name="weapon_type" id="weapon_type" value="<?= $_POST['value'] ?>"> -->
+		<div>
+			<div>
+				<label for="select-field">field: </label>
+				<select name="select-field" id="select-field">
+					<option value="rarity">rareté</option>
+					<option value="name_en" selected>nom</option>
+					<option value="element1">element type</option>
+				</select>
+			</div>
+			<div class="adaptativ-input-container">
+                <label for="inp-search">valeur: </label>
+                <input type="text" name="inp-search" required>
+            </div>
+		</div>
+		
+        <div>
+			
+			<button id="js-submit" value="<?= $_POST['value'] ?>">soumettre en js</button>
+
+            <input type="submit">
+        </div>
+</form>
+</div>
+
 <table id="main">
 	<tr id="table_label">
 		<td>Name</td>
@@ -24,18 +55,21 @@ ob_start();
 		<td>Element type</td>
 		<td>Element damage</td>
 		<td>Gem slot</td>
-		<?php if ($_GET['weapon_type'] == "insect-glaive")
+		<?php if ($weapon_type == "insect-glaive")
 			echo "<td>Kinsect bonus</td>";
 		?>
 	</tr>
 	<?php foreach ($weapons as $elm) { ?>
-		<tr class="data">
-			<?= '<td><a href="details.php?field=id&value=' . $elm->id . '"</a>' . $elm->name_en . '</td>'?>
+		<!-- <tr class="tab-line"> -->
+		<tr class="tr-name_en-<?= $elm->name_en . ' tr-rarity-' . $elm->rarity . ' tr-element1-' . $elm->element1 ?>">
+
+			<?= '<td class="td-name_en"><a href="../index.php?action=weapon&id=' . $elm->id . '"</a>' . $elm->name_en . '</td>'?>
+
 			<td><?= ($elm->previous_en == '' ? "None" : $elm->previous_en); ?></td>
-			<td><?= $elm->rarity ?></td>
+			<td class="td-rarity"><?= $elm->rarity ?></td>
 			<td><?= $elm->attack ?></td>
 			<td><?= $elm->affinity . " %" ?></td>
-			<td><?= ($elm->element1 == '' ? "None" : $elm->element1 . ' ' . "<img src='../public/images/ui/element_" . $elm->element1 . ".svg' width='20px'/>"); ?></td>
+			<td class="td-element1"><?= ($elm->element1 == '' ? "None" : $elm->element1 . ' ' . "<img src='../public/images/ui/element_" . $elm->element1 . ".svg' width='20px'/>"); ?></td>
 			<td>
 				<?= ($elm->element1_attack == '' ? "None" : $elm->element1_attack); ?>
 				<?= ($elm->element1 == "Dragon" ? " (".$elm->elderseal.")" : ''); ?>
@@ -45,7 +79,7 @@ ob_start();
 				<?= ($elm->slot_2 != 0 ? "<img src='../public/images/ui/gem_" . $elm->slot_2 . "_empty.svg' width='20px'/>" : '') ?>
 				<?= ($elm->slot_3 != 0 ? "<img src='../public/images/ui/gem_" . $elm->slot_3 . "_empty.svg' width='20px'/>" : '') ?>
 			</td>
-			<?php if ($_POST['value'] == "insect-glaive")
+			<?php if ($weapon_type == "insect-glaive")
 				echo "<td>" . str_replace('_', ' ', $elm->kinsect_bonus) . "</td>";
 			?>
 		</tr>

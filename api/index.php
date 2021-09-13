@@ -8,6 +8,7 @@ require_once("./api.php");
 
 try {
     if(!empty($_GET['demande'])) {
+
         $url = explode("/", filter_var($_GET['demande'], FILTER_SANITIZE_URL));
 
         switch($url[0]) {
@@ -24,8 +25,9 @@ try {
                 if(empty($url[1])) {
                     getWeapons();
                 }
-                else if ($url[1] == 'weapon_type')
+                else if ($url[1] == 'weapon_type') {
                     getWeaponsByField($url[1], $url[2]);
+                }
 				else if ($url[1] == 'id')
 					getWeaponsDetails($url[2]);
             break;

@@ -55,24 +55,29 @@ function getWeapons()
 	sendJSON($res);
 }
 
+function getCategoryWeaponsByField($category, $field, $value) {
+	$pdo = get_db();
+	$query = $pdo->prepare("SELECT * 
+	FROM weapons 
+	WHERE category='" . "'" . $category . "'" . $field . " LIKE '" . $value . "%'");
+	$query->execute();
+	$res = $query->fetchAll();
+
+	$query->closeCursor();
+	// $json = json_encode($res);
+	sendJSON($res);
+}
+
 function getWeaponsByField($field, $value)
 {
 	$pdo = get_db();
-	$query = $pdo->prepare("SELECT * FROM weapons WHERE " . $field . " LIKE '" . $value ."%'");
+	$query = $pdo->prepare("SELECT * 
+	FROM weapons 
+	WHERE " . $field . " LIKE '" . $value . "%'");
 	$query->execute();
 	$res = $query->fetchAll();
-	// if (empty($res))
-	// 	echo "<p>Aucun résultat trouvé</p>";
-	// for ($i=0; $i < count($res); $i++)
-	// {
-	// 	if (empty($res[$i]['previous_en']))
-	// 		echo $res[$i]['name_en'] . " upgrade of nothing";
-	// 	else
-	// 		echo $res[$i]['name_en'] . " upgrade of " . $res[$i]['previous_en'];
-	// 	echo "</br>";
-	// }
+
 	$query->closeCursor();
-	// $json = json_encode($res);
 	sendJSON($res);
 }
 
@@ -93,7 +98,6 @@ function getArmors()
 	$query->execute();
 	$res = $query->fetchAll();
 	$query->closeCursor();
-	// $json = json_encode($res);
 	sendJSON($res);
 }
 
@@ -103,14 +107,7 @@ function getArmorsByField($field, $value)
 	$query = $pdo->prepare("SELECT * FROM armors WHERE " . $field . " LIKE '" . $value ."%'");
 	$query->execute();
 	$res = $query->fetchAll();		
-	// if (empty($res))
-	// 	echo "<p>Aucun résultat trouvé</p>";
-	// for ($i=0; $i < count($res); $i++)
-	// {
-	// 	echo $res[$i]['name_en'] . " (" . $res[$i]['type'] . ")";
-	// 	echo "</br>";
-	// }
+
 	$query->closeCursor();
-	// $json = json_encode($res);
 	sendJSON($res);
 }
