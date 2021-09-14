@@ -51,12 +51,13 @@ let btnOrders = document.querySelectorAll('.btn-order');
 
 btnOrders.forEach(btn => {
     btn.addEventListener('click', function() {
+        //la valeur de l'input caché prend l'id du bouton sur lequel on as clic -> cet id correspond au nom du champ par lequel on veux ordonner la liste
         hiddenOrderBy.value = btn.id;
-        console.log(hiddenOrderBy.value);
+
+        // let search = document.location.search;
+        // console.log(search);
+
+        console.log(orderForm.action);
         orderFormSubmit.click();
     })
 })
-
-function test() {
-
-}

@@ -29,9 +29,15 @@ try {
                     else if($url[3] == 'order_by') {
                         getWeaponsByCategory($url[2], $url[4]);
                     }
-                    else if($url[3] == 'filter') {//
-                        getCategoryWeaponsByField($url[2], $url[4], $url[5]);
+                    else if($url[3] == 'filter') {
+                        if(empty($url[6])) {
+                            getCategoryWeaponsByField($url[2], $url[4], $url[5]);
+                        }
+                        else {
+                            getCategoryWeaponsByField($url[2], $url[4], $url[5], $url[7]);
+                        }
                     }
+
                 }
 
 				else if ($url[1] == 'id') {

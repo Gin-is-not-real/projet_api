@@ -4,16 +4,8 @@ let hiddenForm = document.querySelector('#form-order-weapons');
 let hiddenOrderBy = document.querySelector('#order_by');
 let hiddenOrder = document.querySelector('#order');
 
-// let btnOrders = document.querySelectorAll('.btn-order');
-// btnOrders.forEach(btn => {
-//     btn.addEventListener('click', function() {
-//         prepareFormAction(this);
-//     });
-// });
-
 function prepareFormAction(btn) {
     console.log(hiddenForm.action);
-
     let search = document.location.search;
     search = search.replace('?', '');
     let sendStr = search + '&order_by=' + btn.id;

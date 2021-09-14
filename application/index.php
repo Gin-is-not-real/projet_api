@@ -27,7 +27,12 @@ try {
                 break;
             //
             case 'weapons-ordered':
-                header('Location: weapons/display_by_cat.php?weapon_type=' . $_GET['weapon_type'] . '&order_by=' . $_POST['order_by']);
+                if(isset($_GET['field']) AND isset($_GET['value'])) {
+                    header('Location: weapons/display_by_cat.php?weapon_type=' . $_GET['weapon_type'] . '&order_by=' . $_POST['order_by'] . '&field=' . $_GET['field'] . '&value=' . $_GET['value']);
+                }
+                else {
+                    header('Location: weapons/display_by_cat.php?weapon_type=' . $_GET['weapon_type'] . '&order_by=' . $_POST['order_by']);
+                }
                 break;
 
             case 'weapon':

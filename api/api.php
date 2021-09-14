@@ -40,9 +40,13 @@ function getWeapons()
 	sendJSON($res);
 }
 
-function getCategoryWeaponsByField($category, $field, $value) {
+function getCategoryWeaponsByField($category, $field, $value, $orderBy = null) {
 	$pdo = get_db();
-	$query = $pdo->prepare("SELECT * FROM weapons WHERE weapon_type='" . $category . "' AND " . $field . " LIKE '" . $value . "%'");
+	$strQuery = "SELECT * FROM weapons WHERE weapon_type='" . $category . "' AND " . $field . " LIKE '" . $value . "%'";
+	if($orderBy != null) {
+		$strQuery .= ' ORDER BY ' . $orderBy;
+	}
+	$query = $pdo->prepare($strQuery);
 	$query->execute();
 	$res = $query->fetchAll();
 	$query->closeCursor();
