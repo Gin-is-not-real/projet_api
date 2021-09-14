@@ -48,7 +48,7 @@ foreach($monsters as $elt) {
 ?>
     <figure>
         <figcaption>
-            <?= $elt->name_en ?>
+            <a href="details.php?id=<?= $elt->id ?>"><?= $elt->name_en ?></a>
         </figcaption>
         <img src="../public/images/monsters/<?= $elt->id ?>.png" width="200px">
     </figure>
