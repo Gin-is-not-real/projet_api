@@ -14,6 +14,7 @@ if(isset($_GET['order_by'])) {
 	$route .= "/order_by/" . $_GET['order_by'];
 }
 $query_string = $_SERVER['QUERY_STRING'];
+
 var_dump($route, '<br>');
 var_dump($query_string);
 
