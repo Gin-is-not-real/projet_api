@@ -39,6 +39,6 @@
 
     <script src="../public/scripts/js/subSelectFields.js"></script>
     <script src="../public/scripts/js/script.js"></script>
-    <script src="../public/scripts/js/ajax.js"></script>
+    <!-- <script src="../public/scripts/js/ajax.js"></script> -->
 </body>
 </html>

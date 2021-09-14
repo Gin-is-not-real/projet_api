@@ -19,8 +19,6 @@ if(selectFields) {
     });
 }
 
-
-
 function createInput() {
     let input = document.createElement('input');
     input.type = "text";
@@ -42,4 +40,23 @@ function createSelect(array) {
     });
 
     return select;
+}
+
+/////////////////////////////////////////////////
+//
+let orderForm = document.querySelector('#form-order-weapons');
+let orderFormSubmit = document.querySelector('#form-order-weapons input[type=submit]');
+let hiddenOrderBy = document.querySelector('#order_by');
+let btnOrders = document.querySelectorAll('.btn-order');
+
+btnOrders.forEach(btn => {
+    btn.addEventListener('click', function() {
+        hiddenOrderBy.value = btn.id;
+        console.log(hiddenOrderBy.value);
+        orderFormSubmit.click();
+    })
+})
+
+function test() {
+
 }

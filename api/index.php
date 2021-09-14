@@ -8,9 +8,8 @@ require_once("./api.php");
 
 try {
     if(!empty($_GET['demande'])) {
-
         $url = explode("/", filter_var($_GET['demande'], FILTER_SANITIZE_URL));
-        
+
         switch($url[0]) {
             case "monsters":
                 if(empty($url[1])) {
@@ -22,19 +21,22 @@ try {
             break;
             
             case "weapons":
-                if(empty($url[1])) {
-                    getWeapons();
-                }
-                else if ($url[1] == 'weapon_type') {
+                if($url[1] == 'weapon_type') {
+                    // url[2] -> type
                     if(empty($url[3])) {
-                        getWeaponsByField($url[1], $url[2]);
+                        getWeaponsByCategory($url[2]);
                     }
-                    else {
-                        getCategoryWeaponsByField($url[2], $url[3], $url[4]);
+                    else if($url[3] == 'order_by') {
+                        getWeaponsByCategory($url[2], $url[4]);
+                    }
+                    else if($url[3] == 'filter') {//
+                        getCategoryWeaponsByField($url[2], $url[4], $url[5]);
                     }
                 }
-				else if ($url[1] == 'id')
+
+				else if ($url[1] == 'id') {
 					getWeaponsDetails($url[2]);
+                }
             break;
 
             case "armors":

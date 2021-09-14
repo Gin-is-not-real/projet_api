@@ -8,8 +8,12 @@ $weapon_type = $_GET['weapon_type'];
 $route = $_SESSION['base-url'] . 'api/weapons/weapon_type/' . $weapon_type;
 
 if(isset($_GET['field']) && isset($_GET['value'])) {
-	$route .= "/" . $_GET['field']. "/" . $_GET['value'];
+	$route .= "/filter/" . $_GET['field']. "/" . $_GET['value'];
 }
+if(isset($_GET['order_by'])) {
+	$route .= "/order_by/" . $_GET['order_by'];
+}
+var_dump($route);
 
 $weapons = json_decode(file_get_contents($route));
 
@@ -39,17 +43,22 @@ ob_start();
             <input type="submit">
         </div>
 	</form>
+
+	<form action="../../application/index.php?action=weapons-ordered&weapon_type=<?= $weapon_type ?>" method="post" name="form-order-weapons" id="form-order-weapons" style="visibility: hidden">
+		<input type="hidden" name="order_by" id="order_by">
+		<input type="submit">
+	</form>
 </div>
 
 <table id="main">
 	<tr id="table_label">
-		<td>Name</td>
-		<td>Previous upgrade</td>
-		<td><button class="btn-order" id="rarity" value="asc">Rarity</button></td>
-		<td>Damage</td>
-		<td>Affinity</td>
-		<td>Element type</td>
-		<td>Element damage</td>
+		<td><button class="btn-order" id="name_en">Name</button></td>
+		<td><button class="btn-order" id="previous_en">Previous upgrade</button></td>
+		<td><button class="btn-order" id="rarity">Rarity</button></td>
+		<td><button class="btn-order" id="damage">Damage</button></td>
+		<td><button class="btn-order" id="affinity">Affinity</button></td>
+		<td><button class="btn-order" id="element1">Element type</button></td>
+		<td><button class="btn-order" id="element1_attack">Element damage</button></td>
 		<td>Gem slot</td>
 		<?php if ($weapon_type == "insect-glaive")
 			echo "<td>Kinsect bonus</td>";

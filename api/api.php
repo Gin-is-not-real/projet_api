@@ -62,6 +62,24 @@ function getCategoryWeaponsByField($category, $field, $value) {
 // 	sendJSON($res);
 // }
 
+function getWeaponsByCategory($weaponType, $orderBy = null) {
+	$pdo = get_db();
+	$strQuery = "SELECT * 
+	FROM weapons 
+	WHERE weapon_type='" . $weaponType . "'";
+
+	if($orderBy != null) {
+		$strQuery .= ' ORDER BY ' . $orderBy;
+	}
+
+	$query = $pdo->prepare($strQuery);
+	$query->execute();
+	$res = $query->fetchAll();
+
+	$query->closeCursor();
+	sendJSON($res);
+}
+
 function getWeaponsByField($field, $value)
 {
 	$pdo = get_db();
