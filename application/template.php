@@ -11,7 +11,6 @@
     if(session_id() == '') {
         session_start();
     }
-    // $base_url = 'http://localhost/FOLDERS/FORM_PROJETS/form_projet_api/projet_api/application/';
 ?>
 <body>
     <header>
@@ -40,5 +39,6 @@
 
     <script src="../public/scripts/js/subSelectFields.js"></script>
     <script src="../public/scripts/js/script.js"></script>
+    <script src="../public/scripts/js/ajax.js"></script>
 </body>
 </html>

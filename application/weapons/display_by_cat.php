@@ -2,6 +2,7 @@
 if(session_id() == '') {
 	session_start();
 }
+
 $weapon_type = $_GET['weapon_type'];
 
 $route = $_SESSION['base-url'] . 'api/weapons/weapon_type/' . $weapon_type;
@@ -19,32 +20,32 @@ ob_start();
 <h1>All <?= str_replace('-', ' ', $weapon_type) ?></h1>
 
 <div>
-	<form action="../../application/index.php?action=weapons-filtered&weapon_type=<?= $weapon_type; ?>" name="form-filter-weapons" method="post">
+	<form action="../../application/index.php?action=weapons-filtered&weapon_type=<?= $weapon_type; ?>" name="form-filter-weapons" id="form-filter-weapons" method="post">
 		<div>
 			<div>
 				<label for="select-field">field: </label>
 				<select name="select-field" id="select-field">
 					<option value="rarity">rareté</option>
-					<option value="name_en" selected>nom</option>
+					<option value="name_en">nom</option>
 					<option value="element1">element type</option>
 				</select>
 			</div>
 			<div class="adaptativ-input-container">
                 <label for="inp-search">valeur: </label>
-                <input type="text" name="inp-search" required>
+                <input type="text" name="inp-search" >
             </div>
-		</div>		
+		</div>	
         <div>
             <input type="submit">
         </div>
-</form>
+	</form>
 </div>
 
 <table id="main">
 	<tr id="table_label">
 		<td>Name</td>
 		<td>Previous upgrade</td>
-		<td>Rarity</td>
+		<td><button class="btn-order" id="rarity" value="asc">Rarity</button></td>
 		<td>Damage</td>
 		<td>Affinity</td>
 		<td>Element type</td>

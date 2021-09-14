@@ -16,13 +16,7 @@ function getMonsters()
 	$query = $pdo->prepare("SELECT * FROM monsters");
 	$query->execute();
 	$res = $query->fetchAll();
-	// for ($i=0; $i < count($res); $i++)
-	// {
-	// 	echo $res[$i]['name_en'];
-	// 	echo "</br>";
-	// }
 	$query->closeCursor();
-	// $json = json_encode($res);
 	sendJSON($res);
 }
 
@@ -32,15 +26,7 @@ function getMonstersByField($field, $value)
 	$query = $pdo->prepare("SELECT * FROM monsters WHERE " . $field . " LIKE '%" . $value ."%'");
 	$query->execute();
 	$res = $query->fetchAll();
-	// if (empty($res))
-	// 	echo "<p>Aucun résultat trouvé</p>";
-	// for ($i=0; $i < count($res); $i++)
-	// {
-	// 	echo $res[$i]['name_en'];
-	// 	echo "</br>";
-	// }
 	$query->closeCursor();
-	// $json = json_encode($res);
 	sendJSON($res);
 }
 
@@ -51,22 +37,30 @@ function getWeapons()
 	$query->execute();
 	$res = $query->fetchAll();
 	$query->closeCursor();
-	// $json = json_encode($res);
 	sendJSON($res);
 }
 
 function getCategoryWeaponsByField($category, $field, $value) {
 	$pdo = get_db();
-	$query = $pdo->prepare("SELECT * 
-	FROM weapons 
-	WHERE weapon_type='" . $category . "' AND " . $field . " LIKE '" . $value . "%'");
+	$query = $pdo->prepare("SELECT * FROM weapons WHERE weapon_type='" . $category . "' AND " . $field . " LIKE '" . $value . "%'");
 	$query->execute();
 	$res = $query->fetchAll();
-
 	$query->closeCursor();
-	// $json = json_encode($res);
 	sendJSON($res);
 }
+
+// function getCategoryWeaponsByField($category, $field, $value, $orderBy = null, $order = null) {
+// 	$pdo = get_db();
+// 	$strRequest = "SELECT * FROM weapons WHERE weapon_type='" . $category . "' AND " . $field . " LIKE '" . $value . "%'";
+// 	if($orderBy != null AND $order != null) {
+// 		// $strRequest .= ' ORDER BY ' . $orderBy . ' ' . $order;
+// 	}
+// 	$query = $pdo->prepare($strRequest);
+// 	$query->execute();
+// 	$res = $query->fetchAll();
+// 	$query->closeCursor();
+// 	sendJSON($res);
+// }
 
 function getWeaponsByField($field, $value)
 {

@@ -25,6 +25,11 @@ try {
             case 'weapons-filtered':
                 header('Location: weapons/display_by_cat.php?weapon_type=' . $_GET['weapon_type'] . '&field=' . $_POST['select-field'] . '&value=' . $_POST['inp-search']);
                 break;
+            //
+            case 'weapons-ordered':
+                header('Location: weapons/display_by_cat.php?weapon_type=' . $_GET['weapon_type'] . '&field=' . $_GET['select-field'] . '&value=' . $_GET['inp-search'] . '&order_by=' . $_GET['order_by']);
+                break;
+
             case 'weapon':
                 header('Location: weapons/details.php?id=' . $_GET['id']);
                 break;

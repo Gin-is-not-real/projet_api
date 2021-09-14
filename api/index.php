@@ -10,7 +10,7 @@ try {
     if(!empty($_GET['demande'])) {
 
         $url = explode("/", filter_var($_GET['demande'], FILTER_SANITIZE_URL));
-
+        
         switch($url[0]) {
             case "monsters":
                 if(empty($url[1])) {
