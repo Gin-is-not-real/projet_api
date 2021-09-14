@@ -36,7 +36,6 @@ subSelects['element1'] = [
     {'value': 'Water'},
     {'value': 'Paralysis'},
     {'value': 'Fire'},
-    {'value': 'None'},
     {'value': 'Sleep'},
     {'value': 'Blast'},
 ];

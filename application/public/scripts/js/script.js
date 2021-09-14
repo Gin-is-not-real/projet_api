@@ -4,10 +4,9 @@ let adaptativInputContainer = document.querySelector('.adaptativ-input-container
 if(selectFields) {
     selectFields.addEventListener('change', function() {
         let inputToRemove = document.getElementsByName('inp-search');
-        console.log(inputToRemove[0]);
+        // console.log(inputToRemove[0]);
         inputToRemove[0].remove();
-        // console.log(adaptativInputContainer.childNodes[2].remove());
-        // adaptativInputContainer.childNodes[1].remove();
+
         let input;
         if(subSelects[this.value] != undefined) {
             input = createSelect(subSelects[this.value]);

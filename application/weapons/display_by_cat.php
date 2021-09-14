@@ -29,20 +29,6 @@ ob_start();
 			<div>
 				<label for="select-field">Criteria: </label>
 				<select name="select-field" id="select-field">
-<<<<<<< HEAD
-					<option value="rarity">rareté</option>
-					<option value="name_en">nom</option>
-					<option value="element1">element type</option>
-				</select>
-			</div>
-			<div class="adaptativ-input-container">
-                <label for="inp-search">valeur: </label>
-                <input type="text" name="inp-search" >
-            </div>
-		</div>	
-        <div>
-            <input type="submit">
-=======
 					<option value="rarity">Rarity</option>
 					<option value="name_en" selected>Name</option>
 					<option value="element1">Element type</option>
@@ -55,7 +41,6 @@ ob_start();
 		</div>		
         <div id="fil_sender">
             <input type="submit" value="Search">
->>>>>>> ca0ce00ac8bbd878a9be270606f3f939c264160b
         </div>
 	</form>
 
