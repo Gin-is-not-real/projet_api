@@ -15,9 +15,6 @@ if(isset($_GET['order_by'])) {
 }
 $query_string = $_SERVER['QUERY_STRING'];
 
-var_dump($route, '<br>');
-var_dump($query_string);
-
 $weapons = json_decode(file_get_contents($route));
 
 ob_start();
@@ -27,8 +24,6 @@ ob_start();
 <h1>All <?= str_replace('-', ' ', $weapon_type) ?></h1>
 
 <div>
-	<!-- <form action="../../application/index.php?action=weapons-filtered&weapon_type=<?= $weapon_type; ?>" name="form-filter-weapons" id="form-filter-weapons" method="post"> -->
-
 	<form action="../../application/index.php?action=weapons-filtered&<?= $query_string; ?>" name="form-filter-weapons" id="form-filter-weapons" method="post">
 
 		<div>
@@ -50,7 +45,6 @@ ob_start();
         </div>
 	</form>
 
-	<!-- <form action="../../application/index.php?action=weapons-ordered&weapon_type=<?= $weapon_type ?>" method="post" name="form-order-weapons" id="form-order-weapons" style="visibility: hidden"> -->
 	<form action="../../application/index.php?action=weapons-ordered&<?= $query_string ?>" method="post" name="form-order-weapons" id="form-order-weapons" style="visibility: hidden">
 
 		<input type="hidden" name="order_by" id="order_by">
