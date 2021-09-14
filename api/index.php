@@ -15,9 +15,11 @@ try {
                 if(empty($url[1])) {
                     getMonsters();
                 }
-                else {
-                    getMonstersByField($url[1], $url[2]);
-                }
+                else if ($url[1] == "id") {
+					getMonstersDetails($url[2]);
+				}
+				else
+					getMonstersByField($url[1], $url[2]);
             break;
             
             case "weapons":

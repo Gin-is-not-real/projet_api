@@ -64,3 +64,8 @@ article div#pctrs figure figcaption
 	border-radius: 10px 10px 0px 0px;
 	width: 100%;
 }
+
+figcaption a
+{
+	color: #252525;
+}

@@ -13,7 +13,7 @@ function sendJSON($infos){
 function getMonsters()
 {
 	$pdo = get_db();
-	$query = $pdo->prepare("SELECT * FROM monsters");
+	$query = $pdo->prepare("SELECT id, name_en, ecology_en, size, pitfall_trap, shock_trap, vine_trap FROM monsters");
 	$query->execute();
 	$res = $query->fetchAll();
 	$query->closeCursor();
@@ -23,9 +23,35 @@ function getMonsters()
 function getMonstersByField($field, $value)
 {
 	$pdo = get_db();
-	$query = $pdo->prepare("SELECT * FROM monsters WHERE " . $field . " LIKE '%" . $value ."%'");
+	$query = $pdo->prepare("SELECT id, name_en, ecology_en, size, pitfall_trap, shock_trap, vine_trap FROM monsters WHERE " . $field . " LIKE '%" . $value ."%'");
 	$query->execute();
 	$res = $query->fetchAll();
+	$query->closeCursor();
+	sendJSON($res);
+}
+
+function getMonstersDetails($id)
+{
+	$pdo = get_db();
+	$request = "SELECT monsters.id AS main_id, monsters.name_en AS name_en, ecology_en, size, pitfall_trap, shock_trap, vine_trap,
+				roar, wind, tremor, defense_down, fireblight, waterblight, thunderblight, iceblight, dragonblight, blastblight,
+				monster_ailments.poison AS poisonblight, monster_ailments.sleep AS sleepblight, monster_ailments.paralysis AS paralysisblight, 
+				monster_ailments.bleed AS bleedblight, monster_ailments.stun AS stunblight, form, alt_description, monster_weaknesses.fire AS fire_weak,
+				monster_weaknesses.water AS water_weak, monster_weaknesses.thunder AS thunder_weak, monster_weaknesses.ice AS ice_weak, monster_weaknesses.dragon AS dragon_weak,
+				monster_weaknesses.poison AS poison_weak, monster_weaknesses.sleep AS sleep_weak, monster_weaknesses.paralysis AS paralysis_weak, monster_weaknesses.blast AS blast_weak, monster_weaknesses.stun AS stun_weak
+				FROM `monsters`
+				INNER JOIN monster_ailments ON monsters.name_en = base_name_en 
+				INNER JOIN monster_weaknesses ON monsters.name_en = monster_weaknesses.name_en
+				WHERE monsters.id = '".$id."'";
+	$query = $pdo->prepare($request);
+	$query->execute();
+	$res = $query->fetchAll();
+	if (empty($res))
+	{
+		$query = $pdo->prepare("SELECT * FROM monsters WHERE id = '".$id."'");
+		$query->execute();
+		$res = $query->fetchAll();
+	}
 	$query->closeCursor();
 	sendJSON($res);
 }

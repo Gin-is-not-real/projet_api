@@ -25,11 +25,11 @@ ob_start();
 
 <div>
 	<form action="../../application/index.php?action=weapons-filtered&<?= $query_string; ?>" name="form-filter-weapons" id="form-filter-weapons" method="post">
-
-		<div>
+		<div id="fil_inputs">
 			<div>
-				<label for="select-field">field: </label>
+				<label for="select-field">Criteria: </label>
 				<select name="select-field" id="select-field">
+<<<<<<< HEAD
 					<option value="rarity">rareté</option>
 					<option value="name_en">nom</option>
 					<option value="element1">element type</option>
@@ -42,6 +42,20 @@ ob_start();
 		</div>	
         <div>
             <input type="submit">
+=======
+					<option value="rarity">Rarity</option>
+					<option value="name_en" selected>Name</option>
+					<option value="element1">Element type</option>
+				</select>
+			</div>
+			<div class="adaptativ-input-container">
+                <label for="inp-search">Value: </label>
+                <input type="text" name="inp-search" required>
+            </div>
+		</div>		
+        <div id="fil_sender">
+            <input type="submit" value="Search">
+>>>>>>> ca0ce00ac8bbd878a9be270606f3f939c264160b
         </div>
 	</form>
 
