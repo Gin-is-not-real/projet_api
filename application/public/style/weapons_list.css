@@ -71,16 +71,14 @@ tr.data td
 	border: solid 2px #252525;
 }
 
-td.td-element1
-{
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-}
-
 td.td-element1 p
 {
 	margin: 0px;
+}
+
+td.td-element1 img
+{
+	vertical-align: -10%;
 }
 
 td.gem_slot img
