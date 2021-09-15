@@ -1,0 +1,151 @@
+# security:
+#   - api_key: []
+
+# securityDefinitions:
+#   #this section configures basic authentification with an API key
+#   api_key:
+#     type: "apiKey"
+#     name: "key"
+#     in: "query"
+
+swagger: "2.0"
+info: 
+  title: "projet api"
+  description: "Project for ACS formation: An api for communicate with a Monster Hunter monsters and weapons database"
+  termsOfService: None 
+  version: "1.0.0"
+#host: "localhost"
+  # contact: 
+  #   name: 
+  #   url:
+  #   email:
+basePath: "/api"
+paths:
+  "/monsters":
+    get:
+      tags:
+      - monsters
+      summary:  Retourne la liste des monstres
+      #description: 
+      operationId: getMonsters
+      consumes: []
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: liste des monstres
+          schema: 
+            "$ref": "#/definitions/monster"
+  "/api/monsters/{id}":
+    get:
+      tags:
+      - monster
+      summary: Retourne un monstre specifique a partir de son id
+      description: ""
+      operationId: getMonstersDetails
+      consumes: []
+      produces: 
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: id du monstre à retourner
+        required: true
+        type: integer
+      responses:
+        '200':
+          description: monstre selectionné
+          schema:
+            "$ref": "#/definitions/monster"
+  "/api/monsters/{field}/{value}":
+    get:
+      tags:
+      - monsters
+      summary: Retourne la liste des monstres dont la propriété {field} est égale à {value}
+      description: ""
+      operationId: getMonstersByField
+      consumes: []
+      produces: 
+      - application/json
+      parameters:
+      - name: field
+        in: path
+        description: nom de colonne de la base ou l'on va chercher la valeur renseignée
+        required: true
+        type: string
+      - name: value
+        in: path
+        description: valeur à rechercher dans la colonne renseignée
+        required: true
+        type: string
+      responses:
+        '200':
+          description: monstres dont la propriété {field} correspond à {value}
+          schema:
+            "$ref": "#/definitions/monster"
+  "api/weapons/weapon_type/{weapon_type}":
+    get:
+      tags:
+      - weapons
+      summary: Retourne la liste des armes de cette categorie
+      description: 
+      operationId: getWeaponsByCategory
+      consumes: []
+      produces:
+      - application/json
+      parameters:
+      - name: weapon_type
+        in: path
+        description: type d'arme a retourner
+        required: true
+        type: string
+      - name: orderBy
+        in:
+        description: le champs par lequel ordonner la liste retournée
+        required: false
+        type: string
+      responses:
+        '200':
+        description: liste d'arme de la categorie demandée
+        schema:
+          "$ref": "#/definitions/weapon" 
+definitions:
+  monster:
+    type: object
+    properties:
+      id: 
+        type: integer
+      name_en:
+        type: string
+      ecology_en:
+        type: string
+      pitfall_trap:
+        type: boolean
+      shock_trap:
+        type: boolean
+      vine_trap:
+        type: boolean
+      size:
+        type: string
+  weapon:
+    type: object
+    properties:
+      id:
+        type: integer
+      weapon_type:
+        type: string
+      rarity:
+        type: integer
+      element1:
+        type: string
+      element1_attack:
+        type: string
+      previous_en:
+        type: string
+      affinity: 
+        type: string
+      attack:
+        type: string
+
+      
+
