@@ -7,24 +7,22 @@
 #     type: "apiKey"
 #     name: "key"
 #     in: "query"
-
 swagger: "2.0"
 info: 
   title: "projet api"
   description: "Project for ACS formation: An api for communicate with a Monster Hunter monsters and weapons database"
   termsOfService: None 
   version: "1.0.0"
-#host: "localhost"
-  # contact: 
-  #   name: 
-  #   url:
-  #   email:
-basePath: "/api"
+host: "localhost"
+schemes: 
+  - "http"
+
+basePath: "/FOLDERS/FORM_PROJETS/form_projet_api/projet_api/api"
 paths:
   "/monsters":
     get:
       tags:
-      - monsters
+      - monster
       summary:  Retourne la liste des monstres
       #description: 
       operationId: getMonsters
@@ -36,7 +34,7 @@ paths:
           description: liste des monstres
           schema: 
             "$ref": "#/definitions/monster"
-  "/api/monsters/{id}":
+  "/monsters/{id}":
     get:
       tags:
       - monster
@@ -57,10 +55,10 @@ paths:
           description: monstre selectionné
           schema:
             "$ref": "#/definitions/monster"
-  "/api/monsters/{field}/{value}":
+  "/monsters/{field}/{value}":
     get:
       tags:
-      - monsters
+      - monster
       summary: Retourne la liste des monstres dont la propriété {field} est égale à {value}
       description: ""
       operationId: getMonstersByField
@@ -83,12 +81,12 @@ paths:
           description: monstres dont la propriété {field} correspond à {value}
           schema:
             "$ref": "#/definitions/monster"
-  "api/weapons/weapon_type/{weapon_type}":
+  "/weapons/weapon_type/{weapon_type}":
     get:
       tags:
-      - weapons
+      - weapon
       summary: Retourne la liste des armes de cette categorie
-      description: 
+      #description: 
       operationId: getWeaponsByCategory
       consumes: []
       produces:
@@ -99,16 +97,62 @@ paths:
         description: type d'arme a retourner
         required: true
         type: string
-      - name: orderBy
-        in:
-        description: le champs par lequel ordonner la liste retournée
-        required: false
+      responses:
+        '200':
+          description: liste d'arme de la categorie demandée
+          schema:
+            "$ref": "#/definitions/weapon" 
+  "/weapons/weapon_type/{weapon_type}/order_by/{field}":
+    get:
+      tags:
+      - weapon
+      summary: Retourne la liste des armes d'une certaine catégorie, ordonnée en fonction du {field} renseigné
+      # description: 
+      operationId: getWeaponsByCategory
+      parameters:
+      - name: weapon_type
+        in: path
+        description: type d'arme a retourner
+        required: true
+        type: string
+      - name: field
+        in: path
+        description: champ par lequel ordonner la liste
+        required: true
         type: string
       responses:
         '200':
-        description: liste d'arme de la categorie demandée
-        schema:
-          "$ref": "#/definitions/weapon" 
+          description: Renvoi la liste des armes de la categorie demandée, ordonnée en fonction du {field}
+          schema:
+            "$ref": "#/definitions/weapon"
+  "/weapons/weapon_type/{weapon_type}/filter/{field}/{value}"
+    get:
+      tags:
+      - weapon
+      summary: Filtre la liste des armes
+      description: Retourne une liste d'arme de la catégorie renseignée dont le champ {field} contient la {value} renseignée
+      operationId: getCategoryWeaponsByField
+      parameters:
+        - name: weapon_type
+          in: path
+          description: type d'arme a retourner
+          required: true
+          type: string
+        - name: field
+          in: path
+          description: champ dans lequel on recherchera la {value}
+          required: true
+          type: string
+        - name: value
+          in: path
+          description: valeur à trouver dans le champ {field}
+          required: true
+          type: string
+        responses:
+          '200':
+            description: Renvoi la liste d'arme correspondante
+            schema:
+              "$ref": "#/descriptions/weapon"
 definitions:
   monster:
     type: object
@@ -146,6 +190,3 @@ definitions:
         type: string
       attack:
         type: string
-
-      
-
