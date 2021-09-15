@@ -56,6 +56,19 @@ function getMonstersDetails($id)
 	sendJSON($res);
 }
 
+function getMonstersRewards($id)
+{
+	$pdo = get_db();
+	$request = "SELECT monsters.id AS main_id, monsters.name_en AS name_en, rank, condition_en, item_en, stack, percentage
+				FROM `monsters` INNER JOIN monster_rewards ON monsters.name_en = monster_rewards.base_name_en
+				WHERE monsters.id = '".$id."'";
+	$query = $pdo->prepare($request);
+	$query->execute();
+	$res = $query->fetchAll();
+	$query->closeCursor();
+	sendJSON($res);
+}
+
 function getWeapons()
 {
 	$pdo = get_db();

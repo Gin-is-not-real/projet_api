@@ -15,8 +15,12 @@ try {
                 if(empty($url[1])) {
                     getMonsters();
                 }
-                else if ($url[1] == "id") {
-					getMonstersDetails($url[2]);
+                else if ($url[1] == "id")
+				{
+					if ($url[3] == "details")
+						getMonstersDetails($url[2]);
+					if ($url[3] == "rewards")
+						getMonstersRewards($url[2]);
 				}
 				else
 					getMonstersByField($url[1], $url[2]);

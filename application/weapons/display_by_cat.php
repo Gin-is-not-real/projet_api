@@ -75,7 +75,7 @@ ob_start();
 			<td class="td-rarity"><?= $elm->rarity ?></td>
 			<td><?= $elm->attack ?></td>
 			<td><?= $elm->affinity . " %" ?></td>
-			<td class="td-element1"><?= ($elm->element1 == '' ? "None" : "<p>" . $elm->element1 .  ' </p>' . "<img src='../public/images/ui/element_" . $elm->element1 . ".svg' width='20px'/>"); ?></td>
+			<td class="td-element1"><?= ($elm->element1 == '' ? "None" : "<p>" . $elm->element1 . "<img src='../public/images/ui/element_" . $elm->element1 . ".svg' width='20px'/></p>"); ?></td>
 			<td>
 				<?= ($elm->element1_attack == '' ? "None" : $elm->element1_attack); ?>
 				<?= ($elm->element1 == "Dragon" ? " (".$elm->elderseal.")" : ''); ?>
