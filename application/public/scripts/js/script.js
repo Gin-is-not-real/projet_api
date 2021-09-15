@@ -55,3 +55,10 @@ btnOrders.forEach(btn => {
         orderFormSubmit.click();
     })
 })
+
+//////////////////////////////////////////////////
+//
+let btnPrevMonster = document.querySelector('#btn-prev-monster');
+let btnNextMonster = document.querySelector('#btn-next-monster');
+
+

@@ -30,6 +30,11 @@ ob_start();
 
 <h1><?= $m_details[0]->name_en ?></h1>
 
+<div>
+	<a href="details.php?id=<?= $_GET['id'] - 1 ?>"><button id="btn-prev-monster"><</button></a>
+	<a href="details.php?id=<?= $_GET['id'] + 1 ?>"><button id="btn-next-monster">></button></a>
+</div>
+
 <div id="master">
 	<div id="m_info_master">
 		<div id="m_info_box">
