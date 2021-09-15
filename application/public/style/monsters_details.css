@@ -26,6 +26,13 @@ p
 	margin: 0px;
 }
 
+div#master
+{
+	display: flex;
+	flex-flow: row wrap;
+	gap: 15vh;
+}
+
 div#m_info_box,
 div#m_info_box div#infos,
 div#m_info_box div#weakness,
@@ -38,6 +45,8 @@ div#m_info_box div.form
 
 div#m_info_box
 {
+	position: sticky;
+	top: 3vh;
 	gap: 25px;
 }
 
@@ -53,4 +62,40 @@ div.elem_n_blight
 	flex-flow: row wrap;
 	justify-content: center;
 	gap: 15px;
+}
+
+table
+{
+	margin-top: 4vh;
+}
+
+td, td a
+{
+	font-family: Abel;
+	font-size: 20px;
+	color: #252525;
+	text-align: center;
+}
+
+td
+{
+	border: solid 2px #252525;
+}
+
+tr#table_label
+{
+	background-color: #252525;
+	
+}
+
+tr#table_label td
+{
+	font-weight: bold;
+	color: #e5e5e5;
+	padding: 1px 8px;
+}
+
+td.td-element1 p
+{
+	margin: 0px;
 }
