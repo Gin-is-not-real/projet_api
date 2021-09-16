@@ -55,9 +55,14 @@ try {
                 if(empty($url[1])) {
                     getArmors();
                 }
-                else {
-                    getArmorsByField($url[1], $url[2]);
-                }
+                else if($url[1] == "set"){
+					if (empty($url[2]))
+						getArmorSet();
+					else
+						getArmorSetByField($url[2], $url[3]);
+				}
+				else
+					getArmorsByField($url[1], $url[2]);
             break;
         }
     }

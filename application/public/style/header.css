@@ -49,3 +49,8 @@ header ul
 {
 	gap: 40px;
 }
+
+header ul li
+{
+	list-style: none;
+}

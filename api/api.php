@@ -149,7 +149,27 @@ function getArmorsByField($field, $value)
 	$query = $pdo->prepare("SELECT * FROM armors WHERE " . $field . " LIKE '" . $value ."%'");
 	$query->execute();
 	$res = $query->fetchAll();		
+	$query->closeCursor();
+	sendJSON($res);
+}
 
+function getArmorSet()
+{
+	$pdo = get_db();
+	$query = $pdo->prepare("SELECT * FROM armorset_base");
+	$query->execute();
+	$res = $query->fetchAll();
+	$query->closeCursor();
+	sendJSON($res);
+}
+
+function getArmorSetByField($field, $value)
+{
+	$pdo = get_db();
+	$query = $pdo->prepare("SELECT id, name_en AS name, rank, monster, head, chest, arms, waist, legs
+							FROM armorset_base WHERE ".$field." LIKE '".$value."'");
+	$query->execute();
+	$res = $query->fetchAll();
 	$query->closeCursor();
 	sendJSON($res);
 }
