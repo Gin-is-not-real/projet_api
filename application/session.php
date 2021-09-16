@@ -2,5 +2,4 @@
 if(session_id() == '') {
     session_start();
 }
-$_SESSION['base-url'] = 'http://localhost/FOLDERS/FORM_PROJETS/form_projet_api/projet_api/';
-$test = 'test';
+$_SESSION['base-url'] = 'http://localhost/ACS_project/projet_api/';

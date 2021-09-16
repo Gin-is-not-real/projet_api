@@ -48,7 +48,7 @@ function getMonstersDetails($id)
 	$res = $query->fetchAll();
 	if (empty($res))
 	{
-		$query = $pdo->prepare("SELECT * FROM monsters WHERE id = '".$id."'");
+		$query = $pdo->prepare("SELECT id AS main_id, name_en, size FROM monsters WHERE id = '".$id."'");
 		$query->execute();
 		$res = $query->fetchAll();
 	}

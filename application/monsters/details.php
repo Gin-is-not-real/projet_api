@@ -2,7 +2,7 @@
 function display_stars($nb_stars, $elem)
 {
 	$i = 0;
-	echo "<p><img src='../public/images/ui/element_" . $elem . ".svg' width='25px' alt='".$elem." element' title='".$elem."'> => ";
+	echo "<p><img src='../public/images/ui/element_" . $elem . ".svg' width='25px' alt='".$elem." element' title='".ucfirst($elem)."'> => ";
 	if ($nb_stars == 0)
 	{
 		echo "None";
@@ -30,9 +30,9 @@ ob_start();
 
 <h1><?= $m_details[0]->name_en ?></h1>
 
-<div>
-	<a href="details.php?id=<?= $_GET['id'] - 1 ?>"><button id="btn-prev-monster"><</button></a>
-	<a href="details.php?id=<?= $_GET['id'] + 1 ?>"><button id="btn-next-monster">></button></a>
+<div id="monster_swap">
+	<a href="details.php?id=<?= ($_GET['id'] == '1' ? '1' : ($_GET['id'] == '100' ? '52' : ($_GET['id'] == '111' ? '104' : $_GET['id'] - 1))) ?>"><button id="btn-prev-monster"><</button></a>
+	<a href="details.php?id=<?= ($_GET['id'] == '52' ? '100' : ($_GET['id'] == '104' ? '111' : ($_GET['id'] == '146' ? '146' : $_GET['id'] + 1))) ?>"><button id="btn-next-monster">></button></a>
 </div>
 
 <div id="master">
@@ -43,8 +43,9 @@ ob_start();
 			</div>
 			<div id="infos">
 				<h2>Global info</h2>
-				<p>Species:<?= ' ' . $m_details[0]->ecology_en ?></p>
-				<p>Trap:<?= ' ' . ($m_details[0]->pitfall_trap != '' ? "Yes" : "No")?></p>
+				<p>Species:<?= ($m_details[0]->size == "large" ? ' ' . $m_details[0]->ecology_en : " Small monster") ?></p>
+				<p>Trap:<?= ' ' . ($m_details[0]->size == "large" ? ($m_details[0]->pitfall_trap != '' ? "Yes" : "No") : "Yes")?></p>
+				<?php if ($m_details[0]->size == "large") { ?>
 				<p>
 					Blight capacity:
 					<?= ' ' . ($m_details[0]->fireblight != '' ? "<img src='../public/images/ui/element_fire.svg' width='25px' alt='fire element' title='Fire'>" : '') ?>
@@ -58,7 +59,9 @@ ob_start();
 					<?= ' ' . ($m_details[0]->blastblight != '' ? "<img src='../public/images/ui/element_blast.svg' width='25px' alt='blast element' title='Blast'>" : '') ?>
 					<?= ' ' . ($m_details[0]->stunblight != '' ? "<img src='../public/images/ui/element_stun.svg' width='25px' alt='stun element' title='Stun'>" : '') ?>
 				</p>
+				<?php } ?>
 			</div>
+			<?php if ($m_details[0]->size == "large") { ?>
 			<div id="weakness">
 				<h2>Weakness</h2>
 				<?php
@@ -86,6 +89,7 @@ ob_start();
 					}
 				?>
 			</div>
+			<?php } ?>
 		</div>
 	</div>
 

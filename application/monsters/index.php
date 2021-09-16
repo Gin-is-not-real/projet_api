@@ -17,6 +17,7 @@ $monsters = json_decode(file_get_contents($route));
 ?>
 <link rel="stylesheet" href="../public/style/monsters.css" />
 <article>
+	<h1>Monsters</h1>
     <div id="filter">
         <form action="index.php" name="form-filter-monsters" method="post">
         <div id="fil_inputs">

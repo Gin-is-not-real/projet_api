@@ -61,9 +61,18 @@ tr#table_label
 
 tr#table_label td
 {
+	color: #e5e5e5;
+	font-weight: bold;
+}
+
+tr#table_label td button
+{
+	font-family: Abel;
+	font-size: 20px;
 	font-weight: bold;
 	color: #e5e5e5;
-	padding: 1px 8px;
+	background-color: #252525;
+	border-color: #252525;
 }
 
 tr.data td

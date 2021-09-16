@@ -26,6 +26,23 @@ p
 	margin: 0px;
 }
 
+div#monster_swap a button
+{
+	font-family: Abel;
+	font-size: 18px;
+	border: solid 2px #252525;
+}
+
+div#monster_swap a button#btn-prev-monster
+{
+	border-radius: 8px 0px 0px 8px;
+}
+
+div#monster_swap a button#btn-next-monster
+{
+	border-radius: 0px 8px 8px 0px;
+}
+
 div#master
 {
 	display: flex;
