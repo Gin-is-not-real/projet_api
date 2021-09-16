@@ -72,7 +72,7 @@ tr#table_label td button
 	font-weight: bold;
 	color: #e5e5e5;
 	background-color: #252525;
-	border-color: #252525;
+	border: solid 0px #252525;
 }
 
 tr.data td
