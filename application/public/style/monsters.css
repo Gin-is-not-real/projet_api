@@ -74,6 +74,11 @@ article div#pctrs figure figcaption
 	width: 100%;
 }
 
+article div#pctrs figure img
+{
+	margin: 20px;
+}
+
 figcaption a
 {
 	color: #252525;

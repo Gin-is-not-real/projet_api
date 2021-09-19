@@ -39,7 +39,7 @@ ob_start();
 	<div id="m_info_master">
 		<div id="m_info_box">
 			<div id="pctr">
-				<img src="../public/images/monsters/<?= $m_details[0]->main_id ?>.png" width="320px">
+				<img src="../public/images/monsters/<?= $m_details[0]->main_id ?>.png" width="300px">
 			</div>
 			<div id="infos">
 				<h2>Global info</h2>
