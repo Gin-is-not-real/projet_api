@@ -26,6 +26,14 @@ p
 	margin: 0px;
 }
 
+div#monster_swap
+{
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	gap: 10px;
+}
+
 div#monster_swap a button
 {
 	font-family: Abel;
@@ -47,7 +55,9 @@ div#master
 {
 	display: flex;
 	flex-flow: row wrap;
+	justify-content: center;
 	gap: 15vh;
+	margin-top: 4vh;
 }
 
 div#m_info_box,
@@ -79,11 +89,6 @@ div.elem_n_blight
 	flex-flow: row wrap;
 	justify-content: center;
 	gap: 15px;
-}
-
-table
-{
-	margin-top: 4vh;
 }
 
 td, td a

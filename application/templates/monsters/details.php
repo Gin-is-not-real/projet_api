@@ -28,10 +28,9 @@ ob_start();
 ?>
 <link rel="stylesheet" href="../../public/style/monsters_details.css" />
 
-<h1><?= $m_details[0]->name_en ?></h1>
-
 <div id="monster_swap">
 	<a href="details.php?id=<?= ($_GET['id'] == '1' ? '1' : ($_GET['id'] == '100' ? '52' : ($_GET['id'] == '111' ? '104' : $_GET['id'] - 1))) ?>"><button id="btn-prev-monster"><</button></a>
+	<h1><?= $m_details[0]->name_en ?></h1>
 	<a href="details.php?id=<?= ($_GET['id'] == '52' ? '100' : ($_GET['id'] == '104' ? '111' : ($_GET['id'] == '146' ? '146' : $_GET['id'] + 1))) ?>"><button id="btn-next-monster">></button></a>
 </div>
 
