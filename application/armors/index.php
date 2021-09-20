@@ -13,11 +13,14 @@ ob_start();
 
 // $armors = json_decode(file_get_contents($route));
 ?>
+<link rel="stylesheet" href="../public/style/armor_home.css" />
 
 <h1>Select a rank</h1>
 
 <div id="master">
-	<a href="display_by_rank.php?field=rank&value=LR">See low rank armor</a>
+	<a href="display_by_rank.php?rank=LR">See low rank armor</a>
+	<a href="display_by_rank.php?rank=HR">See hight rank armor</a>
+	<a href="display_by_rank.php?rank=MR">See master rank armor</a>
 </div>
 
 <!-- <?php
