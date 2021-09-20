@@ -153,6 +153,36 @@ paths:
             description: Renvoi la liste d'arme correspondante
             schema:
               "$ref": "#/descriptions/weapon"
+  "/weapons/id/{id}"
+    get:
+      tags:
+      - weapon
+      summary: Affiche la page de détails d'une arme
+      description: Affiche la page de détails de l'arme dont l'{id} est rensignée
+      operationId: getWeaponsDetails
+      parameters:
+        - name: id
+        in: path
+        description: id de l'arme à afficher
+        required: true
+        type: integer
+      responses:
+        '200':
+          description: Envoi sur la page de détails d'une arme
+          schema:
+            "$ref": "#/description/weapon"
+  "/armors"
+    get:
+      tags: 
+      - armor
+      summary: affiche la liste des armures
+      description: affiche la liste des armures
+      operationId: getArmors
+      parameters:
+      responses:
+        '200':
+          description: affiche la liste des armures
+          schema: "$ref": "#/description/armor"         
 definitions:
   monster:
     type: object
