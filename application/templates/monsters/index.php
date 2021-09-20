@@ -15,7 +15,7 @@ if(isset($_POST["select-field"]) AND isset($_POST['inp-search'])) {
 $monsters = json_decode(file_get_contents($route));
 
 ?>
-<link rel="stylesheet" href="../public/style/monsters.css" />
+<link rel="stylesheet" href="../../public/style/monsters.css" />
 <article>
 	<h1>Monsters</h1>
     <div id="filter">
@@ -51,7 +51,7 @@ foreach($monsters as $elt) {
         <figcaption>
             <a href="details.php?id=<?= $elt->id ?>"><?= $elt->name_en ?></a>
         </figcaption>
-        <img src="../public/images/monsters/<?= $elt->id ?>.png" width="180px" height="180px">
+        <img src="../../public/images/monsters/<?= $elt->id ?>.png" width="180px" height="180px">
     </figure>
 
     <?php

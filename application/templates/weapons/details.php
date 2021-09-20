@@ -7,7 +7,7 @@ $weap_details = json_decode(file_get_contents($route));
 
 ob_start();
 ?>
-<link rel="stylesheet" href="../public/style/weapons_details.css" />
+<link rel="stylesheet" href="../../public/style/weapons_details.css" />
 
 <?php if (isset($weap_details[0])) {?>
 <h1><?= ($weap_details[0])->name_en ;?></h1>
@@ -20,12 +20,12 @@ ob_start();
 		<p>Element:
 			<?= ' ' . $weap_details[0]->element1 .
 			($weap_details[0]->element1 != '' ? (" (" . $weap_details[0]->element1_attack . ")" .
-			" <img src='../public/images/ui/element_" . $weap_details[0]->element1 . ".svg' width='25px'/>") : 'None' ) ?>
+			" <img src='../../public/images/ui/element_" . $weap_details[0]->element1 . ".svg' width='25px'/>") : 'None' ) ?>
 		</p>
 		<p>Gem slot:
-			<?= ($weap_details[0]->slot_1 != 0 ? "<img src='../public/images/ui/gem_" . $weap_details[0]->slot_1 . "_empty.svg' width='25px'/>" : 'None') ?>
-			<?= ($weap_details[0]->slot_2 != 0 ? "<img src='../public/images/ui/gem_" . $weap_details[0]->slot_2 . "_empty.svg' width='25px'/>" : '') ?>
-			<?= ($weap_details[0]->slot_3 != 0 ? "<img src='../public/images/ui/gem_" . $weap_details[0]->slot_3 . "_empty.svg' width='25px'/>" : '') ?>
+			<?= ($weap_details[0]->slot_1 != 0 ? "<img src='../../public/images/ui/gem_" . $weap_details[0]->slot_1 . "_empty.svg' width='25px'/>" : 'None') ?>
+			<?= ($weap_details[0]->slot_2 != 0 ? "<img src='../../public/images/ui/gem_" . $weap_details[0]->slot_2 . "_empty.svg' width='25px'/>" : '') ?>
+			<?= ($weap_details[0]->slot_3 != 0 ? "<img src='../../public/images/ui/gem_" . $weap_details[0]->slot_3 . "_empty.svg' width='25px'/>" : '') ?>
 		</p>
 	</div>
 	<?php foreach ($weap_details as $elm) { ?>

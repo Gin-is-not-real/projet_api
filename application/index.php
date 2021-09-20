@@ -7,39 +7,39 @@ require 'session.php';
 
 try {
     if(!isset($_GET['action'])) {
-        header('Location: home.php');
+        header('Location: templates/home.php');
     }
     else {
         $action = $_GET['action'];
 
         switch($action) {
             case 'monsters':
-                header('Location: monsters/index.php');
+                header('Location: templates/monsters/index.php');
                 break;
             case 'weapons':
-                header('Location: weapons/index.php');
+                header('Location: templates/weapons/index.php');
                 break;
             case 'weapons-type':
-                header('Location: weapons/display_by_cat.php?weapon_type=' . $_GET['weapon_type']);
+                header('Location: templates/weapons/display_by_cat.php?weapon_type=' . $_GET['weapon_type']);
                 break;
             case 'weapons-filtered':
-                header('Location: weapons/display_by_cat.php?weapon_type=' . $_GET['weapon_type'] . '&field=' . $_POST['select-field'] . '&value=' . $_POST['inp-search']);
+                header('Location: templates/weapons/display_by_cat.php?weapon_type=' . $_GET['weapon_type'] . '&field=' . $_POST['select-field'] . '&value=' . $_POST['inp-search']);
                 break;
             //
             case 'weapons-ordered':
                 if(isset($_GET['field']) AND isset($_GET['value'])) {
-                    header('Location: weapons/display_by_cat.php?weapon_type=' . $_GET['weapon_type'] . '&order_by=' . $_POST['order_by'] . '&field=' . $_GET['field'] . '&value=' . $_GET['value']);
+                    header('Location: templates/weapons/display_by_cat.php?weapon_type=' . $_GET['weapon_type'] . '&order_by=' . $_POST['order_by'] . '&field=' . $_GET['field'] . '&value=' . $_GET['value']);
                 }
                 else {
-                    header('Location: weapons/display_by_cat.php?weapon_type=' . $_GET['weapon_type'] . '&order_by=' . $_POST['order_by']);
+                    header('Location: templates/weapons/display_by_cat.php?weapon_type=' . $_GET['weapon_type'] . '&order_by=' . $_POST['order_by']);
                 }
                 break;
 
             case 'weapon':
-                header('Location: weapons/details.php?id=' . $_GET['id']);
+                header('Location: templates/weapons/details.php?id=' . $_GET['id']);
                 break;
             case 'armors':
-                header('Location: armors/index.php');
+                header('Location: templates/armors/index.php');
                 break;
         }
     }

@@ -107,7 +107,7 @@ paths:
       tags:
       - weapon
       summary: Retourne la liste des armes d'une certaine catégorie, ordonnée en fonction du {field} renseigné
-      # description: 
+      # description: git pull
       operationId: getWeaponsByCategory
       parameters:
       - name: weapon_type

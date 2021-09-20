@@ -13,7 +13,7 @@ ob_start();
 
 // $armors = json_decode(file_get_contents($route));
 ?>
-<link rel="stylesheet" href="../public/style/armor_home.css" />
+<link rel="stylesheet" href="../../public/style/armor_home.css" />
 
 <h1>Select a rank</h1>
 
