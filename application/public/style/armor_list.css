@@ -5,44 +5,16 @@ h1
 	border: solid 3px #252525;
 	border-radius: 10px;
 	padding: 1px 6px;
-	margin-bottom: 40px;
 }
 
-form
-{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 10px
-}
-
-form div#fil_inputs
-{
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	gap: 15px;
-}
-
-form label,
-form input,
-form select
-{
-	font-size: 18px;
-	font-family: Abel;
-	border-radius: 8px;
-	outline: none;
-}
-
-form input,
-form select
-{
-	border: solid 1px #252525;
-}
-
-table#main
+table
 {
 	margin-top: 4vh;
+}
+
+tr, td
+{
+	padding: 1px 4px;
 }
 
 td, td a
@@ -56,13 +28,17 @@ td, td a
 tr#table_label
 {
 	background-color: #252525;
-	
 }
 
 tr#table_label td
 {
 	color: #e5e5e5;
 	font-weight: bold;
+}
+
+tr#table_label td img
+{
+	vertical-align: bottom;
 }
 
 tr#table_label td button
@@ -75,34 +51,22 @@ tr#table_label td button
 	border: solid 0px #252525;
 }
 
-tr.data td
+tr.table_data td
 {
 	border: solid 2px #252525;
 }
 
-td.td-element1 p
+tr.table_data td img
 {
-	margin: 0px;
+	vertical-align: bottom;
 }
 
-td.td-element1 img
-{
-	vertical-align: -10%;
-}
-
-td.gem_slot img
-{
-	vertical-align: inherit;
-}
-
-tr.data td,
-tr.data td a
+tr.table_data td
 {
 	transition-duration: 0.18s;
 }
 
-tr.data:hover td,
-tr.data:hover td a
+tr.table_data:hover td
 {
 	background-color: #252525;
 	color: #e5e5e5;

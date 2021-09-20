@@ -1,0 +1,15 @@
+h1
+{
+	font-family: Audiowide;
+	font-size: 25px;
+	border: solid 3px #252525;
+	border-radius: 10px;
+	padding: 1px 6px;
+}
+
+div#master a
+{
+	color: #252525;
+	font-family: Abel;
+	font-size: 20px;
+}
