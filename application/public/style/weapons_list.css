@@ -101,10 +101,15 @@ tr.data td a
 	transition-duration: 0.18s;
 }
 
-tr.data:hover td,
-tr.data:hover td a
+tr.data:hover td
 {
 	background-color: #252525;
+	color: #e5e5e5;
+	transition-duration: 0.18s;
+}
+
+tr.data:hover td a
+{
 	color: #e5e5e5;
 	transition-duration: 0.18s;
 }
