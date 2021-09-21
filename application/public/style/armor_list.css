@@ -61,7 +61,8 @@ tr.table_data td img
 	vertical-align: bottom;
 }
 
-tr.table_data td
+tr.table_data td,
+tr.table_data td a
 {
 	transition-duration: 0.18s;
 }
@@ -69,6 +70,12 @@ tr.table_data td
 tr.table_data:hover td
 {
 	background-color: #252525;
+	color: #e5e5e5;
+	transition-duration: 0.18s;
+}
+
+tr.table_data:hover td a
+{
 	color: #e5e5e5;
 	transition-duration: 0.18s;
 }

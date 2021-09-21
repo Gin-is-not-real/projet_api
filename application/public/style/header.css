@@ -52,5 +52,10 @@ header ul
 
 header ul li
 {
-	list-style: none;
+	list-style: url("../images/ui/zenny.svg");
+}
+
+header ul li a
+{
+	vertical-align: super;
 }

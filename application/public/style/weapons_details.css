@@ -25,6 +25,13 @@ div#master_container div
 	padding: 15px;
 }
 
+div#master_container div#craft_box
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
 div#master_container h2
 {
 	text-align: center;

@@ -4,10 +4,9 @@ function display_line($line)
 {
 	echo "<tr class='table_data'>";
 	echo "<td><img src='../../public/images/ui/arm_".$line->type.".svg' width='24px'></td>";
-	echo "<td>" . $line->name_en . "</td>";
+	echo "<td><a href='../../index.php?action=armor&id=" . $line->id_item . "'</a>".$line->name_en."</td>";
 	echo "<td>" . $line->rarity . "</td>";
 	echo "<td>" . $line->defense_base . "</td>";
-	echo "<td>" . $line->defense_max . "</td>";
 	echo "<td>" . $line->defense_fire . "</td>";
 	echo "<td>" . $line->defense_water . "</td>";
 	echo "<td>" . $line->defense_thunder . "</td>";
@@ -39,12 +38,11 @@ $armors = json_decode(file_get_contents($route));
 		<td>Name</td>
 		<td>Rarity</td>
 		<td>Defense</td>
-		<td>Def max</td>
-		<td>Defense<img src="../../public/images/ui/element_fire.svg" width="24px"></td>
-		<td>Defense<img src="../../public/images/ui/element_water.svg" width="24px"></td>
-		<td>Defense<img src="../../public/images/ui/element_thunder.svg" width="24px"></td>
-		<td>Defense<img src="../../public/images/ui/element_ice.svg" width="24px"></td>
-		<td>Defense<img src="../../public/images/ui/element_dragon.svg" width="24px"></td>
+		<td>Defense<img src="../../public/images/ui/element_fire.svg" width="24px" alt="fire" title="Fire"></td>
+		<td>Defense<img src="../../public/images/ui/element_water.svg" width="24px" alt="water" title="Water"></td>
+		<td>Defense<img src="../../public/images/ui/element_thunder.svg" width="24px" alt="thunder" title="Thunder"></td>
+		<td>Defense<img src="../../public/images/ui/element_ice.svg" width="24px" alt="ice" title="Ice"></td>
+		<td>Defense<img src="../../public/images/ui/element_dragon.svg" width="24px" alt="dragon" title="Dragon"></td>
 		<td>Decoration</td>
 	</tr>
 	<?php
@@ -61,6 +59,5 @@ $armors = json_decode(file_get_contents($route));
 </table>
 
 <?php
-// include "display_by_rank_ex.php";
 $content = ob_get_clean();
 require_once("../template.php");

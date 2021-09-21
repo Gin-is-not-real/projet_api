@@ -5,44 +5,31 @@ if(session_id() == '') {
 }
 
 ob_start();
-// $route = $_SESSION['base-url'] . 'api/armors';
-
-// if(isset($_POST["select-field"]) AND isset($_POST['inp-search'])) {
-//     $route .= '/' . $_POST['select-field'] . '/' . $_POST['inp-search'];
-// }
-
-// $armors = json_decode(file_get_contents($route));
 ?>
 <link rel="stylesheet" href="../../public/style/armor_home.css" />
 
 <h1>Select a rank</h1>
 
 <div id="master">
-	<a href="../../index.php?action=armors-rank&rank=LR">See low rank armor</a>
-	<a href="../../index.php?action=armors-rank&rank=HR">See hight rank armor</a>
-	<a href="../../index.php?action=armors-rank&rank=MR">See master rank armor</a>
+	<figure>
+		<figcaption>
+			<a href="../../index.php?action=armors-rank&rank=LR">See low rank armor</a>
+		</figcaption>
+		<img src="../../public/images/ui/quest_star_lr.svg" width="50px"/>
+	</figure>
+	<figure>
+		<figcaption>
+			<a href="../../index.php?action=armors-rank&rank=HR">See hight rank armor</a>
+		</figcaption>
+		<img src="../../public/images/ui/quest_star_hr.svg" width="50px"/>
+	</figure>
+	<figure>
+		<figcaption>
+			<a href="../../index.php?action=armors-rank&rank=MR">See master rank armor</a>
+		</figcaption>
+		<img src="../../public/images/ui/quest_star_mr.svg" width="50px"/>
+	</figure>
 </div>
-
-<!-- <?php
-$i = 0;
-foreach ($armors as $armor_piece)
-{
-	if ($i == 0)
-		echo "<table>";
-	
-	echo "<tr>";
-	echo "<td>".$armor_piece->type."</td>";
-	echo "<td>".$armor_piece->name_en."</td>";
-	echo "</tr>";
-	$i++;
-	if ($i % 5 == 0)
-	{
-		$i = 0;
-		echo "</table>";
-	}
-}
-?> -->
-
 <?php
 $content = ob_get_clean();
 require_once('../template.php');
