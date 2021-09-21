@@ -153,6 +153,22 @@ function getArmorsByField($field, $value)
 	sendJSON($res);
 }
 
+function getArmorDetails($id)
+{
+	$pdo = get_db();
+	$query = $pdo->prepare("SELECT name_en AS name, rarity, type, slot_1, slot_2, slot_3, defense_base AS def, defense_max AS def_max,
+	defense_augment_max AS def_mag, defense_fire AS def_fire, defense_water AS def_water, defense_thunder AS def_thunder, defense_ice AS def_ice,
+	defense_dragon AS def_dragon, item1_name, item1_qty, item2_name, item2_qty, item3_name, item3_qty, item4_name, item4_qty,
+	skill1_name, skill1_level, skill2_name, skill2_level FROM armors
+	INNER JOIN armor_craft ON armors.id_item = armor_craft.id
+	INNER JOIN armor_skills ON armors.id_item = armor_skills.id
+	WHERE armors.id_item = '".$id."'");
+	$query->execute();
+	$res = $query->fetchAll();
+	$query->closeCursor();
+	sendJSON($res);
+}
+
 function getArmorSet()
 {
 	$pdo = get_db();

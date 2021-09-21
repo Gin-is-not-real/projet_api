@@ -61,6 +61,8 @@ try {
 					else
 						getArmorSetByField($url[2], $url[3]);
 				}
+				else if ($url[1] == "id")
+					getArmorDetails($url[2]);
 				else
 					getArmorsByField($url[1], $url[2]);
             break;
