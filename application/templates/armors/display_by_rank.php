@@ -3,7 +3,7 @@
 function display_line($line)
 {
 	echo "<tr class='table_data'>";
-	echo "<td><img src='../../public/images/ui/arm_".$line->type.".svg' width='24px'></td>";
+	echo "<td><img src='../../public/images/ui/arm_".$line->type.".svg' width='24px' alt='armor type' ></td>";
 	echo "<td><a href='../../index.php?action=armor&id=" . $line->id_item . "'</a>".$line->name_en."</td>";
 	echo "<td>" . $line->rarity . "</td>";
 	echo "<td>" . $line->defense_base . "</td>";
@@ -13,9 +13,9 @@ function display_line($line)
 	echo "<td>" . $line->defense_ice . "</td>";
 	echo "<td>" . $line->defense_dragon . "</td>";
 	echo "<td class='gem_slot'>";
-		echo ($line->slot_1 != 0 ? "<img src='../../public/images/ui/gem_" . $line->slot_1 . "_empty.svg' width='24px'/>" : 'None');
-		echo ($line->slot_2 != 0 ? "<img src='../../public/images/ui/gem_" . $line->slot_2 . "_empty.svg' width='24px'/>" : '');
-		echo ($line->slot_3 != 0 ? "<img src='../../public/images/ui/gem_" . $line->slot_3 . "_empty.svg' width='24px'/>" : '');
+		echo ($line->slot_1 != 0 ? "<img src='../../public/images/ui/gem_" . $line->slot_1 . "_empty.svg' alt='gem slot 1' width='24px'/>" : 'None');
+		echo ($line->slot_2 != 0 ? "<img src='../../public/images/ui/gem_" . $line->slot_2 . "_empty.svg' alt='gem slot 2' width='24px'/>" : '');
+		echo ($line->slot_3 != 0 ? "<img src='../../public/images/ui/gem_" . $line->slot_3 . "_empty.svg' alt='gem slot 3' width='24px'/>" : '');
 	echo "</td>";
 	echo "</tr>";
 }

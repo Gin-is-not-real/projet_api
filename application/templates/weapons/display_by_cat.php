@@ -74,15 +74,15 @@ ob_start();
 			<td class="td-rarity"><?= $elm->rarity ?></td>
 			<td><?= $elm->attack ?></td>
 			<td><?= $elm->affinity . " %" ?></td>
-			<td class="td-element1"><?= ($elm->element1 == '' ? "None" : "<p>" . $elm->element1 . "<img src='../../public/images/ui/element_" . $elm->element1 . ".svg' width='20px'/></p>"); ?></td>
+			<td class="td-element1"><?= ($elm->element1 == '' ? "None" : "<p>" . $elm->element1 . "<img src='../../public/images/ui/element_" . $elm->element1 . ".svg' alt='element type' width='20px'/></p>"); ?></td>
 			<td>
 				<?= ($elm->element1_attack == '' ? "None" : $elm->element1_attack); ?>
 				<?= ($elm->element1 == "Dragon" ? " (".$elm->elderseal.")" : ''); ?>
 			</td>
 			<td class="gem_slot">
-				<?= ($elm->slot_1 != 0 ? "<img src='../../public/images/ui/gem_" . $elm->slot_1 . "_empty.svg' width='20px'/>" : 'None') ?>
-				<?= ($elm->slot_2 != 0 ? "<img src='../../public/images/ui/gem_" . $elm->slot_2 . "_empty.svg' width='20px'/>" : '') ?>
-				<?= ($elm->slot_3 != 0 ? "<img src='../../public/images/ui/gem_" . $elm->slot_3 . "_empty.svg' width='20px'/>" : '') ?>
+				<?= ($elm->slot_1 != 0 ? "<img src='../../public/images/ui/gem_" . $elm->slot_1 . "_empty.svg' alt='gem slot 1' width='20px'/>" : 'None') ?>
+				<?= ($elm->slot_2 != 0 ? "<img src='../../public/images/ui/gem_" . $elm->slot_2 . "_empty.svg' alt='gem slot 2' width='20px'/>" : '') ?>
+				<?= ($elm->slot_3 != 0 ? "<img src='../../public/images/ui/gem_" . $elm->slot_3 . "_empty.svg' alt='gem slot 3' width='20px'/>" : '') ?>
 			</td>
 			<?php if ($weapon_type == "insect-glaive")
 				echo "<td>" . str_replace('_', ' ', $elm->kinsect_bonus) . "</td>";
