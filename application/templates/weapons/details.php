@@ -14,7 +14,7 @@ ob_start();
 
 <div id="master_container">
 	<div id="detail_box">
-		<h2>Details</h2>
+		<h2>Global info</h2>
 		<p>Damage: <?= ' ' . $weap_details[0]->attack ?></p>
 		<p>Affinity: <?= ' ' . $weap_details[0]->affinity . " %"?></p>
 		<p>Element:
