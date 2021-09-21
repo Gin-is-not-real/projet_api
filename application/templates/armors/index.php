@@ -18,9 +18,9 @@ ob_start();
 <h1>Select a rank</h1>
 
 <div id="master">
-	<a href="display_by_rank.php?rank=LR">See low rank armor</a>
-	<a href="display_by_rank.php?rank=HR">See hight rank armor</a>
-	<a href="display_by_rank.php?rank=MR">See master rank armor</a>
+	<a href="../../index.php?action=armors-rank&rank=LR">See low rank armor</a>
+	<a href="../../index.php?action=armors-rank&rank=HR">See hight rank armor</a>
+	<a href="../../index.php?action=armors-rank&rank=MR">See master rank armor</a>
 </div>
 
 <!-- <?php

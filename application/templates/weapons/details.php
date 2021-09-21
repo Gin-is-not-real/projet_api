@@ -42,7 +42,7 @@ ob_start();
 	}
 	else
 	{
-		echo "<h1>No where</h2>";
+		echo "<h1>No where</h1>";
 		echo "<div id='special_case'>";
 		echo "<p>Gold, Taroth, Kj&aacuterr and Safi weapons cannot be crafted. They are only drop by </br>completing the special quest of Kulve Taroth and Safi'jiiva.</p>";
 		echo "</div>";

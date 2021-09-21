@@ -45,7 +45,6 @@ ob_start();
 	</form>
 
 	<form action="../../../application/index.php?action=weapons-ordered&<?= $query_string ?>" method="post" name="form-order-weapons" id="form-order-weapons" style="visibility: hidden">
-
 		<input type="hidden" name="order_by" id="order_by">
 		<input type="submit">
 	</form>
