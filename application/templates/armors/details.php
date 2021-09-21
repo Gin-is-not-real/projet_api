@@ -32,9 +32,9 @@ ob_start();
 			<?= ($armor_details[0]->skill2_name != '' ? ', ' . $armor_details[0]->skill2_name . '(' . $armor_details[0]->skill2_level . ')' : '') ?>
 		</p>
 		<p>Gem slot:
-			<?= ($armor_details[0]->slot_1 != 0 ? "<img src='../../public/images/ui/gem_" . $armor_details[0]->slot_1 . "_empty.svg' width='25px'/>" : 'None') ?>
-			<?= ($armor_details[0]->slot_2 != 0 ? "<img src='../../public/images/ui/gem_" . $armor_details[0]->slot_2 . "_empty.svg' width='25px'/>" : '') ?>
-			<?= ($armor_details[0]->slot_3 != 0 ? "<img src='../../public/images/ui/gem_" . $armor_details[0]->slot_3 . "_empty.svg' width='25px'/>" : '') ?>
+			<?= ($armor_details[0]->slot_1 != 0 ? "<img src='../../public/images/ui/gem_" . $armor_details[0]->slot_1 . "_empty.svg' width='25px' alt='gem slot 1' />" : 'None')?>
+			<?= ($armor_details[0]->slot_2 != 0 ? "<img src='../../public/images/ui/gem_" . $armor_details[0]->slot_2 . "_empty.svg' width='25px' alt='gem slot 2' />" : '') ?>
+			<?= ($armor_details[0]->slot_3 != 0 ? "<img src='../../public/images/ui/gem_" . $armor_details[0]->slot_3 . "_empty.svg' width='25px' alt='gem slot 3' />" : '') ?>
 		</p>
 	</div>
 	<div id="craft_box">

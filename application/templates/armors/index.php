@@ -15,19 +15,19 @@ ob_start();
 		<figcaption>
 			<a href="../../index.php?action=armors-rank&rank=LR">See low rank armor</a>
 		</figcaption>
-		<img src="../../public/images/ui/quest_star_lr.svg" width="50px"/>
+		<img src="../../public/images/ui/quest_star_lr.svg" alt="LR star" width="50px"/>
 	</figure>
 	<figure>
 		<figcaption>
 			<a href="../../index.php?action=armors-rank&rank=HR">See hight rank armor</a>
 		</figcaption>
-		<img src="../../public/images/ui/quest_star_hr.svg" width="50px"/>
+		<img src="../../public/images/ui/quest_star_hr.svg" alt="HR star" width="50px"/>
 	</figure>
 	<figure>
 		<figcaption>
 			<a href="../../index.php?action=armors-rank&rank=MR">See master rank armor</a>
 		</figcaption>
-		<img src="../../public/images/ui/quest_star_mr.svg" width="50px"/>
+		<img src="../../public/images/ui/quest_star_mr.svg" alt="MR star" width="50px"/>
 	</figure>
 </div>
 <?php
