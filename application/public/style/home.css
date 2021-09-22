@@ -1,0 +1,39 @@
+h1
+{
+	font-family: Audiowide;
+	font-size: 25px;
+	text-align: center;
+	border: solid 3px #252525;
+	border-radius: 10px;
+	margin-top: 6vh;
+	margin-bottom: 6vh;
+	padding: 1px 6px;
+}
+
+div#nav_div
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+div#nav_div p,
+div#nav_div a
+{
+	font-size: 20px;
+	font-family: Abel;
+}
+
+div#nav_div a
+{
+	color: #252525;
+}
+
+div#nav_div div#link
+{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+}

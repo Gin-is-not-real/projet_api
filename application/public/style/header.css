@@ -47,6 +47,8 @@ article div#pctrs
 
 header ul
 {
+	margin-top: 15px;
+	margin-bottom: 15px;
 	gap: 40px;
 }
 
@@ -58,4 +60,11 @@ header ul li
 header ul li a
 {
 	vertical-align: super;
+}
+
+header ul li#home
+{
+	position: absolute;
+	top: 15px;
+	left: 10px;
 }

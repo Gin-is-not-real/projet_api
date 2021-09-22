@@ -7,7 +7,7 @@ require 'session.php';
 
 try {
     if(!isset($_GET['action'])) {
-        header('Location: templates/home.php');
+        header('Location: templates/home/home.php');
     }
     else {
         $action = $_GET['action'];
