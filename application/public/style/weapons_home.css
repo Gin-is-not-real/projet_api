@@ -2,12 +2,14 @@ h1
 {
 	font-family: Audiowide;
 	font-size: 25px;
+	text-align: center;
 	color: #252525;
 	background-color: #e5e5e5c0;
 	border: solid 3px #252525;
 	border-radius: 10px;
 	padding: 1px 6px;
-	margin-bottom: 40px;
+	margin-top: 2vh;
+	margin-bottom: 8vh;
 }
 
 div#choose_box
@@ -15,7 +17,9 @@ div#choose_box
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
-	gap: 12px;
+	gap: 100px;
+	margin-left: 65px;
+	margin-right: 65px;
 }
 
 div#choose_box figure
@@ -27,18 +31,7 @@ div#choose_box figure
 	border: 1px solid #252525;
 	border-radius: 10px;
 	width: 178px;
-}
-
-div#choose_box figure:hover figcaption
-{
-	background-color: #80808090;
-	transition-duration: 0.18s;
-}
-
-div#choose_box figure:hover figcaption a
-{
-	color: #e5e5e5;
-	transition-duration: 0.18s;
+	margin: 0px;
 }
 
 div#choose_box figcaption
@@ -46,14 +39,16 @@ div#choose_box figcaption
 	font-family: Abel;
 	font-size: 20px;
 	text-align: center;
+	color: #252525;
 	background-color: #e5e5e5c0;
 	border-radius: 10px 10px 0px 0px;
 	width: 100%;
 	transition-duration: 0.18s;
 }
 
-div#choose_box a
+div#choose_box figure:hover figcaption
 {
-	color: #252525;
+	color: #e5e5e5;
+	background-color: #80808090;
 	transition-duration: 0.18s;
 }

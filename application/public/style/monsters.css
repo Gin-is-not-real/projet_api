@@ -7,6 +7,8 @@ h1
 	border: solid 3px #252525;
 	border-radius: 10px;
 	padding: 1px 6px;
+	margin-top: 2vh;
+	margin-bottom: 1vh;
 }
 
 article
@@ -21,6 +23,10 @@ article div#pctrs
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-top: 6vh;
+	gap: 50px;
 }
 
 article div#filter
@@ -28,7 +34,6 @@ article div#filter
 	background-color: #e5e5e5e5;
 	border: solid 1px #252525;
 	border-radius: 10px;
-	margin-bottom: 4vh;
 	padding: 10px;
 }
 
@@ -73,7 +78,7 @@ article div#pctrs figure
 	border: 1px solid #252525;
 	border-radius: 10px;
 	width: 200px;
-	margin: 20px;
+	margin: 0px;
 }
 
 article div#pctrs figure figcaption
@@ -81,9 +86,11 @@ article div#pctrs figure figcaption
 	font-size: 18px;
 	font-family: Abel;
 	text-align: center;
+	color: #252525;
 	background-color: #e5e5e5c0;
 	border-radius: 10px 10px 0px 0px;
 	width: 100%;
+	transition-duration: 0.18s;
 }
 
 article div#pctrs figure img
@@ -91,19 +98,9 @@ article div#pctrs figure img
 	margin: 20px;
 }
 
-figcaption a
-{
-	color: #252525;
-}
-
 article div#pctrs figure:hover figcaption
 {
-	background-color: #80808090;
-	transition-duration: 0.18s;
-}
-
-article div#pctrs figure:hover figcaption a
-{
 	color: #e5e5e5;
+	background-color: #80808090;
 	transition-duration: 0.18s;
 }

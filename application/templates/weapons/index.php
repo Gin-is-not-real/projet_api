@@ -9,90 +9,118 @@ ob_start();
 
 <h1>Select a weapon type</h1>
 <div id="choose_box">
-	<figure>
-        <figcaption>
-            <a href="../../index.php?action=weapons-type&weapon_type=great-sword">See Great Sword</a>
-        </figcaption>
-        <img src="../../public/images/ui/weap_greatsword_base.svg" alt="great sword"  alt="great sword" width="80px">
-    </figure>
-	<figure>
-        <figcaption>
-            <a href="../../index.php?action=weapons-type&weapon_type=long-sword">See Long Sword</a>
-        </figcaption>
-        <img src="../../public/images/ui/weap_longsword_base.svg"  alt="long sword" width="80px">
-    </figure>
-	<figure>
-        <figcaption>
-            <a href="../../index.php?action=weapons-type&weapon_type=sword-and-shield">See Sword and Shield</a>
-        </figcaption>
-        <img src="../../public/images/ui/weap_sword_and_shield_base.svg"  alt="sword and shield" width="80px">
-    </figure>
-	<figure>
-        <figcaption>
-            <a href="../../index.php?action=weapons-type&weapon_type=dual-blades">See Dual Blades</a>
-        </figcaption>
+	<a href="../../index.php?action=weapons-type&weapon_type=great-sword">
+		<figure>
+    	    <figcaption>
+				See Great Sword
+			</figcaption>
+			<img src="../../public/images/ui/weap_greatsword_base.svg" alt="great sword"  alt="great sword" width="80px">
+		</figure>
+	</a>
+	<a href="../../index.php?action=weapons-type&weapon_type=long-sword">
+		<figure>
+        	<figcaption>
+				See Long Sword
+			</figcaption>
+		<img src="../../public/images/ui/weap_longsword_base.svg"  alt="long sword" width="80px">
+		</figure>
+	</a>
+	<a href="../../index.php?action=weapons-type&weapon_type=sword-and-shield">
+		<figure>
+    		<figcaption>
+				See Sword and Shield
+    		</figcaption>
+    	<img src="../../public/images/ui/weap_sword_and_shield_base.svg"  alt="sword and shield" width="80px">
+		</figure>
+	</a>
+	<a href="../../index.php?action=weapons-type&weapon_type=dual-blades">
+		<figure>
+    		<figcaption>
+				See Dual Blades
+			</figcaption>
         <img src="../../public/images/ui/weap_dual_blades_base.svg"  alt="dual blade" width="80px">
-    </figure>
-	<figure>
-        <figcaption>
-            <a href="../../index.php?action=weapons-type&weapon_type=hammer">See Hammers</a>
-        </figcaption>
-        <img src="../../public/images/ui/weap_hammer_base.svg"  alt="hammer" width="80px">
-    </figure>
-	<figure>
-        <figcaption>
-            <a href="../../index.php?action=weapons-type&weapon_type=hunting-horn">See Hunting Horn</a>
-        </figcaption>
-        <img src="../../public/images/ui/weap_hunting_horn_base.svg"  alt="hunting horn" width="80px">
-    </figure>
-	<figure>
-        <figcaption>
-            <a href="../../index.php?action=weapons-type&weapon_type=lance">See Lances</a>
-        </figcaption>
-        <img src="../../public/images/ui/weap_lance_base.svg"  alt="lances" width="80px">
-    </figure>
-	<figure>
-        <figcaption>
-            <a href="../../index.php?action=weapons-type&weapon_type=gunlance">See Gunlances</a>
-        </figcaption>
-        <img src="../../public/images/ui/weap_gunlance_base.svg"  alt="gunlances" width="80px">
-    </figure>
-	<figure>
-        <figcaption>
-            <a href="../../index.php?action=weapons-type&weapon_type=switch-axe">See Switch Axes</a>
-        </figcaption>
+    	</figure>
+	</a>
+	<a href="../../index.php?action=weapons-type&weapon_type=hammer">
+		<figure>
+        	<figcaption>
+				See Hammers
+			</figcaption>
+			<img src="../../public/images/ui/weap_hammer_base.svg"  alt="hammer" width="80px">
+		</figure>
+	</a>
+	<a href="../../index.php?action=weapons-type&weapon_type=hunting-horn">
+		<figure>
+        	<figcaption>
+				See Hunting Horn
+			</figcaption>
+			<img src="../../public/images/ui/weap_hunting_horn_base.svg"  alt="hunting horn" width="80px">
+		</figure>
+	</a>
+	<a href="../../index.php?action=weapons-type&weapon_type=lance">
+		<figure>
+			<figcaption>
+				See Lances
+			</figcaption>
+			<img src="../../public/images/ui/weap_lance_base.svg"  alt="lances" width="80px">
+		</figure>
+	</a>
+	<a href="../../index.php?action=weapons-type&weapon_type=gunlance">
+		<figure>
+    		<figcaption>
+				See Gunlances
+			</figcaption>
+			<img src="../../public/images/ui/weap_gunlance_base.svg"  alt="gunlances" width="80px">
+		</figure>
+	</a>
+	<a href="../../index.php?action=weapons-type&weapon_type=switch-axe">
+		<figure>
+    		<figcaption>
+				See Switch Axes
+			</figcaption>
         <img src="../../public/images/ui/weap_switch_axe_base.svg"  alt="switch axes" width="80px">
-    </figure>
-	<figure>
-        <figcaption>
-            <a href="../../index.php?action=weapons-type&weapon_type=charge-blade">See Charge Blades</a>
-        </figcaption>
-        <img src="../../public/images/ui/weap_charge_blade_base.svg"  alt="Charge Blades" width="80px">
-    </figure>
-	<figure>
-        <figcaption>
-            <a href="../../index.php?action=weapons-type&weapon_type=insect-glaive">See Insect Blades</a>
-        </figcaption>
-        <img src="../../public/images/ui/weap_insect_glaive_base.svg"  alt="Insect Blades" width="80px">
-    </figure>
-	<figure>
-        <figcaption>
-            <a href="../../index.php?action=weapons-type&weapon_type=light-bowgun">See Light Bowguns</a>
-        </figcaption>
-        <img src="../../public/images/ui/weap_light_bowgun_base.svg"  alt="Light Bowguns" width="80px">
-    </figure>
-	<figure>
-        <figcaption>
-            <a href="../../index.php?action=weapons-type&weapon_type=heavy-bowgun">See Heavy Bowguns</a>
-        </figcaption>
-        <img src="../../public/images/ui/weap_heavy_bowgun_base.svg"  alt="Heavy Bowguns" width="80px">
-    </figure>
-	<figure>
-        <figcaption>
-            <a href="../../index.php?action=weapons-type&weapon_type=bow">See Bow</a>
-        </figcaption>
-        <img src="../../public/images/ui/weap_bow_base.svg"  alt="Bow" width="80px">
-    </figure>
+    	</figure>
+	</a>
+	<a href="../../index.php?action=weapons-type&weapon_type=charge-blade">
+		<figure>
+        	<figcaption>
+				See Charge Blades
+			</figcaption>
+			<img src="../../public/images/ui/weap_charge_blade_base.svg"  alt="Charge Blades" width="80px">
+		</figure>
+	</a>
+	<a href="../../index.php?action=weapons-type&weapon_type=insect-glaive">
+		<figure>
+			<figcaption>
+				See Insect Blades
+			</figcaption>
+			<img src="../../public/images/ui/weap_insect_glaive_base.svg"  alt="Insect Blades" width="80px">
+		</figure>
+	</a>
+	<a href="../../index.php?action=weapons-type&weapon_type=light-bowgun">
+		<figure>
+			<figcaption>
+				See Light Bowguns
+			</figcaption>
+			<img src="../../public/images/ui/weap_light_bowgun_base.svg"  alt="Light Bowguns" width="80px">
+		</figure>
+	</a>
+	<a href="../../index.php?action=weapons-type&weapon_type=heavy-bowgun">
+		<figure>
+			<figcaption>
+				See Heavy Bowguns
+			</figcaption>
+			<img src="../../public/images/ui/weap_heavy_bowgun_base.svg"  alt="Heavy Bowguns" width="80px">
+		</figure>
+	</a>
+	<a href="../../index.php?action=weapons-type&weapon_type=bow">
+		<figure>
+			<figcaption>
+				See Bow
+      		</figcaption>
+        	<img src="../../public/images/ui/weap_bow_base.svg"  alt="Bow" width="80px">
+    	</figure>
+	</a>
 </div>
 
 <?php

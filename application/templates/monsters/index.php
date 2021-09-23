@@ -47,12 +47,14 @@ $monsters = json_decode(file_get_contents($route));
 <?php
 foreach($monsters as $elt) {
 ?>
-    <figure>
-        <figcaption>
-            <a href="details.php?id=<?= $elt->id ?>"><?= $elt->name_en ?></a>
-        </figcaption>
-        <img src="../../public/images/monsters/<?= $elt->id ?>.png" width="180px" height="180px" alt="<?= $elt->name_en ?>">
-    </figure>
+	<a href="details.php?id=<?= $elt->id ?>">
+		<figure>
+			<figcaption>
+				<?= $elt->name_en ?>
+			</figcaption>
+			<img src="../../public/images/monsters/<?= $elt->id ?>.png" width="180px" height="180px" alt="<?= $elt->name_en ?>">
+		</figure>
+	</a>
 <?php
 };
 ?>

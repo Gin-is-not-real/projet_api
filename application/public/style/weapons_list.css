@@ -7,7 +7,11 @@ h1
 	border: solid 3px #252525;
 	border-radius: 10px;
 	padding: 1px 6px;
-	margin-bottom: 40px;
+}
+
+main
+{
+	gap: 3vh
 }
 
 form
@@ -46,11 +50,6 @@ form select
 	border: solid 1px #252525;
 }
 
-table#main
-{
-	margin-top: 4vh;
-}
-
 td, td a
 {
 	font-family: Abel;
@@ -62,7 +61,6 @@ td, td a
 tr#table_label
 {
 	background-color: #252525;
-	
 }
 
 tr#table_label td
