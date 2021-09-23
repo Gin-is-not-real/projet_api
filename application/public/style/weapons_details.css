@@ -2,6 +2,8 @@ h1
 {
 	font-family: Audiowide;
 	font-size: 25px;
+	color: #252525;
+	background-color: #e5e5e5c0;
 	border: solid 3px #252525;
 	border-radius: 10px;
 	margin-top: 6vh;
@@ -21,7 +23,7 @@ div#master_container div
 {
 	border: solid 2px #252525;
 	border-radius: 10px;
-	background-color: #80808091;
+	background-color: #e5e5e5e5;
 	padding: 15px;
 }
 

@@ -10,10 +10,36 @@
 	src: url("Audiowide-Regular.ttf");
 }
 
+html
+{
+	background-image: url('../images/pctr/background.jpg');
+	background-attachment: fixed;
+}
+
+html::-webkit-scrollbar
+{
+	width: 8px;
+}
+
+/* html::-webkit-scrollbar-button
+{
+	background-color: #4860cf;
+} */
+
+html::-webkit-scrollbar-thumb
+{
+	background-color: #252525;
+	border-radius: 50px 0px 0px 50px;
+}
+	
+html::-webkit-scrollbar-track
+{
+	background-color: #e5e5e5e5;
+}
+
 html, body
 {
 	margin: 0px;
-	background-color: #e5e5e5;
 }
 
 body, main
@@ -55,6 +81,20 @@ header ul
 header ul li
 {
 	list-style: url("../images/ui/zenny.svg");
+}
+
+header ul li a
+{
+	border-radius: 8px;
+	padding: 1px 6px;
+	transition-duration: 0.18s;
+}
+
+header ul li:hover a
+{
+	color: #252525;
+	background-color: #e5e5e5;
+	transition-duration: 0.18s;
 }
 
 header ul li a

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../../public/style/header.css" />
-	<link rel="icon" href="../../public/images/ui/hunter_notes.svg"/>
+	<link rel="icon" href="../../public/images/pctr/hunter_notes.svg"/>
     <title>MHW Library</title>
 </head>
 <?php 

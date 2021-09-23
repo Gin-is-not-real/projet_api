@@ -2,6 +2,8 @@ h1
 {
 	font-family: Audiowide;
 	font-size: 25px;
+	color: #252525;
+	background-color: #e5e5e5c0;
 	border: solid 3px #252525;
 	border-radius: 10px;
 	padding: 1px 6px;
@@ -21,9 +23,22 @@ div#choose_box figure
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	border: solid 1px #252525;
+	background-color: #a0a0a0c0;
+	border: 1px solid #252525;
 	border-radius: 10px;
 	width: 178px;
+}
+
+div#choose_box figure:hover figcaption
+{
+	background-color: #80808090;
+	transition-duration: 0.18s;
+}
+
+div#choose_box figure:hover figcaption a
+{
+	color: #e5e5e5;
+	transition-duration: 0.18s;
 }
 
 div#choose_box figcaption
@@ -31,13 +46,14 @@ div#choose_box figcaption
 	font-family: Abel;
 	font-size: 20px;
 	text-align: center;
-	background-color: #80808091;
+	background-color: #e5e5e5c0;
 	border-radius: 10px 10px 0px 0px;
-	/* padding: 1px 6px; */
 	width: 100%;
+	transition-duration: 0.18s;
 }
 
 div#choose_box a
 {
 	color: #252525;
+	transition-duration: 0.18s;
 }

@@ -2,6 +2,8 @@ h1
 {
 	font-family: Audiowide;
 	font-size: 25px;
+	color: #252525;
+	background-color: #e5e5e5c0;
 	border: solid 3px #252525;
 	border-radius: 10px;
 	padding: 1px 6px;
@@ -13,6 +15,10 @@ form
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	background-color: #e5e5e5e5;
+	border: solid 1px #252525;
+	border-radius: 10px;
+	padding: 10px;
 	gap: 10px
 }
 
@@ -63,6 +69,7 @@ tr#table_label td
 {
 	color: #e5e5e5;
 	font-weight: bold;
+	padding: 1px 6px;
 }
 
 tr#table_label td button
@@ -77,6 +84,7 @@ tr#table_label td button
 
 tr.data td
 {
+	background-color: #e5e5e5e5;
 	border: solid 2px #252525;
 }
 
